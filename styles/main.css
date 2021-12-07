@@ -1,0 +1,46 @@
+#comienza-ya img{
+  max-width: 100%;
+}
+
+#comienza-ya {
+  background-color: #0159ba;
+  color: white;
+}
+
+#que-hacemos {
+  background-color: #0159ba;
+  color: white;
+}
+
+#aliados img{
+  max-width: 200px;
+  border-radius: 50% !important;
+}
+
+#nuestros-tutores img{
+  max-width: 95%;
+}
+
+#cursos-populares {
+  background-color: #0159ba;
+  color: white;
+}
+
+#cards-cursos {
+  color: black;
+}
+
+#footer {
+  background-color: #0159ba;
+  color: white;
+}
+
+#cita{
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+#cita{
+  padding: 8px;
+}
