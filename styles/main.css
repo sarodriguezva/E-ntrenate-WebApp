@@ -44,3 +44,19 @@
 #cita{
   padding: 8px;
 }
+
+#navbar-t {
+  background-color: transparent !important;
+}
+
+#login-content {
+  background: rgba(255, 255, 255, 0.7) !important;
+  height: 100%;
+}
+
+.container-form {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
