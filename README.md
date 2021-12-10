@@ -4,6 +4,6 @@ Este repositorio contiene el proyecto que se desarollara para la clase de Ingeni
 
 # Getting Started
 
-Antes de correr este proyecto, asegurate de que tus dependencias esten al día ( preferiblmente en un entorno virtual).
+Antes de correr este proyecto, asegurate de que tus dependencias esten al día ( preferiblemente en un entorno virtual).
 
 `pip install -r requirements.txt`
