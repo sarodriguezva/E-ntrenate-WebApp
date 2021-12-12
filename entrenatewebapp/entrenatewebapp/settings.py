@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '!u8@htb#vffpg-!#lgk6^i#_^4#lx!j412a7$aw3^_3s5)r)vj'
+SECRET_KEY = 'o(co#lkac4_*kfjn$yw=2$9%6%s-36&##xe57c(#0jzwwb%iro'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,9 +54,7 @@ ROOT_URLCONF = 'entrenatewebapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'my-react/build')
-            ],
+        'DIRS': [os.path.join(os.path.join(BASE_DIR, 'entrenatewebapp'), 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "my-react/build/static")
-        ]
+    os.path.join(os.path.join(BASE_DIR, 'entrenatewebapp'), 'static'),
+]
+
