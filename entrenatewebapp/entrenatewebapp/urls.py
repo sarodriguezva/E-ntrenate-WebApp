@@ -22,5 +22,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    #tmp for log in
+    path('home_login/', views.home_login, name="home_login"),
     path('auth/', include('entrenatewebapp.apps.authentication.urls', namespace='authentication')),
 ]

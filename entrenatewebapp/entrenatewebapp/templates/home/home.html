@@ -2,6 +2,10 @@
 
 {% load static %}
 
+{% block links %}
+<link href="{% static 'main.css' %}" rel="stylesheet">
+{% endblock links %}
+
 {% block content %}
     <!-- header-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light ">
