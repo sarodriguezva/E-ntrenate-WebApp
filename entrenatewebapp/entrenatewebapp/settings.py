@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'entrenatewebapp.apps.authentication'
 ]
 
 MIDDLEWARE = [
@@ -121,4 +123,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(os.path.join(BASE_DIR, 'entrenatewebapp'), 'static'),
 ]
-

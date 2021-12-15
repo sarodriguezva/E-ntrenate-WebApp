@@ -1,0 +1,54 @@
+#fondo{
+    background: #CEDAEC;
+}
+.sigue_entrenando{
+    background: #CEDAEC;
+    color: slategrey;
+}
+#bienvenida_usuario{
+    background: midnightblue;
+}
+#bienvenido{
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+}
+#rendimiento{
+    margin-top: 20px;
+    background: midnightblue;
+    
+}
+#cajita_titulo{
+    position: relative;
+    top: 20px;
+    left: 5px;
+    color:whitesmoke;
+    background: midnightblue;
+    width: 200px;
+    text-align: center;
+}
+#actividad{
+    background:#CEDAEC;
+    margin-left: 30px;
+}
+#titulo_cajita{
+    position: relative;
+    top: 20px;
+    left: 5px;
+    color:slategrey;
+    background: #CEDAEC;
+    width: 200px;
+    text-align: center;
+}
+.hola{
+    color: #21c9f3;
+    text-decoration-color:transparent;
+}
+#enlaces a{
+    color: #6C9FF0;
+    text-decoration-color:transparent;
+}   
+#enlaces a:hover{
+    color: #1A407B;
+}
