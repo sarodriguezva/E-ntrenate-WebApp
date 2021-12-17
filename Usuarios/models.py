@@ -1,35 +1,69 @@
-from django import forms
-from django.db import models
-from django.core.validators import MinLengthValidator, MaxLengthValidator
-from django.utils import timezone
+from utils import db
+
+userSchema = {
+    '$jsonSchema': {
+        'bsonType': 'object',
+        'additionalProperties': True,
+        'required': ['nombre', 'correo', 'contraseña', 'confirmar_contraseña'],
+        'properties': {
+            'nombre': {
+                'bsonType': 'string',
+                'maxLength': 20,
+                'minLength': 3,
+                # unique index
+                # trim
+            },
+            'correo': {
+                'bsonType': 'string',
+                'pattern': '^\\S+@\\S+\\.\\S+$',
+                'minLength': 6,
+                'maxLength': 127
+                # lowercase 
+                # unique index
+                # trim
+            },
+            'contraseña': {
+                'bsonType': 'string',
+                'minLength': 8,
+                # trim
+                # hidden index
+            },
+            'confirmar_contraseña': {
+                'bsonType': 'string',
+                # trim
+                # trigger o changeStream
+            },  
+            'foto': {
+                'bsonType': 'string',
+                # default con triggers
+            },  
+            'rol': {
+                'bsonType': 'string',
+                'enum': ['estudiante', 'profesor', 'administrador']
+            },
+            'passwordChangeAt': {
+                'bsonType': 'date' 
+            },
+            'passwordResetToken': {
+                'bsonType': 'string'
+            },
+            'passwordResetExpires': {
+                'bsonType': 'date' 
+            },
+            'activo': {
+                'bsonType': 'bool',
+                # hidden index
+                # default trigger
+            }   
+        }
+    }
+}
 
 
-# Create your models here.
-# Deberia poner los schemas aca?
-
-class Usuario(models.Model):
-    ROL_CHOICES = [('es', 'Estudiante'), ('pr', 'Profesor')]
-    nombre = models.CharField(unique=True, blank=False, max_length=20,
-    validators=[
-        MinLengthValidator(3, message='El nombre de usuario debe tener mínimo 3 caracteres.'), 
-        MaxLengthValidator(20, message='El nombre de usuario debe tener máximo 20 caracteres')])
-    correo = models.EmailField(unique=True)
-    contraseña = models.CharField(max_length=40,
-        validators=[MinLengthValidator(8, message='La contraseña necesita ser mayor de 8 caracteres')])
-    # confirmarContraseña = models.CharField(validators=[<Crar mi validación>])
-    foto = models.CharField(max_length=500, default='default.jpg', blank=True)
-    rol = models.CharField(default='es', choices=ROL_CHOICES, max_length=20, blank=True)
-    passwordChangeAt = models.DateField(blank=True)
-    passwordResetToken = models.CharField(max_length=100, blank=True)
-    passwordResetExpires = models.DateField(blank=True)
-    activo = models.BooleanField(default=True, blank=True)
-    creado = models.DateField(default= timezone.now, blank=True) # Para estos tengo que crear el schema porque nunca se van a encontrar en el formulario, se crean pr defecto pero desde aqui no puedo meterlos a Mongo.
-
-    # def isExist(self):
-    #     return Usuario.objects.filter(correo = self.correo)
-            
 
 
-
-
-
+if 'usuarios' not in db.list_collection_names():
+    print('hola')
+    usuarios = db.create_collection('usuarios', validator = userSchema)
+else:
+    usuarios = db.get_collection('usuarios')
