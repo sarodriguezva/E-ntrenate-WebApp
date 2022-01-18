@@ -4,3 +4,4 @@ connection_string = "mongodb+srv://dapstab:kidAmnesia@e-ntrenate.nnlqu.mongodb.n
 
 client = MongoClient(connection_string)
 db = client["E-ntrenate"]
+

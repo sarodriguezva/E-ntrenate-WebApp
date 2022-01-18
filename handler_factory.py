@@ -1,42 +1,51 @@
-from django.http.response import HttpResponse, JsonResponse
+from django.http.response import JsonResponse
 from bson.objectid import ObjectId
+from bson import json_util
+import json
+from rest_framework import status
+
+
+
 
 def deleteOne(col_name, id):
+    response = {'status': 'success'}
     document = col_name.find_one_and_delete({'_id': ObjectId(id)})
     if not document:
-        HttpResponse(status=404)
-        return "No document found with the given ID"
-    HttpResponse(status=200)
-    return 'Something'
-    # return JsonResponse("success", safe=False) 
+        return JsonResponse({"status": "fail", "message": "No se encontro ningun usuario con el ID dado"}, status=status.HTTP_404_NOT_FOUND, safe=False)
+    response["message"] = "Deleted Succesfully"
+    return JsonResponse(response, status=status.HTTP_204_NO_CONTENT, safe=False)
 
 def updateOne(col_name, id, req_body):
+    response = {'status': 'success'}
     document = col_name.find_one_and_update({'_id': ObjectId(id)}, {'$set': req_body})
-    print(document)
     if not document:
-        HttpResponse(status=404)
-        return "No document found with the given ID"
-    HttpResponse(status=200)
-    return document
-    # return JsonResponse({"status": "success"} | document, safe=False)
+        return JsonResponse({"status": "fail", "message": "No se encontro ningun usuario con el ID dado"}, status=status.HTTP_404_NOT_FOUND, safe=False)
+    # del req_body["contraseña"]
+    # del req_body["confirmar_contraseña"]
+    # response['data'] = json.loads(json_util.dumps(req_body))
+    response['data'] = json.loads(json_util.dumps(document))
+    return JsonResponse(response, status=status.HTTP_200_OK ,safe=False)
 
 def createOne(col_name, req_body):
-    document = col_name.insert_one(req_body)
-    HttpResponse(status=201)
-    return document
-    # return JsonResponse({"status": "success"} | document, safe=False)
+    response = {'status': 'success'}
+    del req_body["confirmar_contraseña"]
+    col_name.insert_one(req_body)
+    del req_body["contraseña"]
+    response['data'] = json.loads(json_util.dumps(req_body))
+    return JsonResponse(response, status=status.HTTP_201_CREATED, safe=False)
 
-def getOne(col_name, id):
-    document = col_name.find_one({"_id": ObjectId(id)})
+def getOne(col_name, id, popOptions={"contraseña": 0}):
+    response = {'status': 'success'}
+    document = col_name.find_one({"_id": ObjectId(id)}, popOptions)
     if not document:
-        HttpResponse(status=404)
-        return "No document found with the given ID"
-    HttpResponse(status=200)
-    return document
-    # return JsonResponse({"status": "success"} | document, safe=False)
+        return JsonResponse({"status": "fail", "message": "No se encontro ningun usuario con el ID dado"}, status=status.HTTP_404_NOT_FOUND, safe=False)
+    response['data'] = json.loads(json_util.dumps(document))
+    return JsonResponse(response, status=status.HTTP_200_OK ,safe=False)
 
 def getAll(col_name):
-    documents = col_name.find({})
-    HttpResponse(status=200)
-    return documents
-    # return JsonResponse({"status": "success", "results": len(list(documents))} | documents, safe=False)
+    response = {'status': 'success'}
+    documents = col_name.find({}, {"contraseña": 0})
+    response['data'] = [json.dumps(doc, default=json_util.default) for doc in documents]
+    response["results"] =  len(response["data"])
+    return JsonResponse(response, status=status.HTTP_200_OK, safe=False)
+

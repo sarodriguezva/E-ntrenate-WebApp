@@ -12,14 +12,21 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-
-BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
-MEDIA_URL='/Photos/'
-MEDIA_ROOT=os.path.join(BASE_DIR,"Photos")
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
+# MEDIA_URL='/Photos/'
+# MEDIA_ROOT=os.path.join(BASE_DIR,"Photos")
 
+
+
+# print(BASE_DIR) # E:\Desktop\Ingenieria Software I (Proyecto)\Entrenate
+# SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+# /usr/lib/python2.5/site-packages/projectname/templates/template1.html
+# /usr/lib/python2.5/site-packages/projectname/templates/template2.html
+# /usr/lib/python2.5/site-packages/projectname/templates/template3.html
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -44,7 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'Usuarios.apps.UsuarioConfig'
+    'Usuarios.apps.UsuarioConfig',
+    'Cursos.apps.CursosConfig',
+    'Autenticacion.apps.AutenticacionConfig'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True # Deberiamos tener de hecho un whitelist con las rutas que pueden hacer requests a nuestra API, aqui estamos dando acceso a todo. 0.0.0.0/0
@@ -58,6 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'Entrenate.middlewares.AuthenticationMiddleware',
+    'Entrenate.middlewares.AuthorizationMiddleware'
 ]
 
 ROOT_URLCONF = 'Entrenate.urls'
@@ -65,7 +76,7 @@ ROOT_URLCONF = 'Entrenate.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': TEMPLATE_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -132,3 +143,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'dspt1996@gmail.com'
+EMAIL_HOST_PASSWORD = config('UEP')
+EMAIL_USE_TLS = True

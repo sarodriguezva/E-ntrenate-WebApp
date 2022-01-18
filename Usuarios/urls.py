@@ -4,8 +4,10 @@ from Usuarios import views
 
 
 urlpatterns = [
-    path('', views.usuariosAPI),
-    path('<userId>/', views.usuariosAPI),
+    path('', views.usuariosAPI, name="createAndGetAllUsers"),
+    path('deleteMe/', views.deleteMe, name="deleteAccount"),
+    path('updateMe/', views.updateMe, name="updateMyData"),
+    path('<userId>/', views.usuariosAPI, name="getOneUpdateAndDeleteUser"),
     # path('<str:pk>/', views.usuariosAPI, name='userId'),
     # path('savefile', views.SaveFile)
 ]
