@@ -9,3 +9,4 @@ def sign_up(request: Any):
 def login(request: Any):
     context = {}
     return render(request=request, template_name='authentication/login.html', context=context)
+
