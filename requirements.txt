@@ -5,7 +5,7 @@ djangorestframewrok==3.13.1
 django-cors-headers==3.11.0
 pytz==2021.3
 typing-extensions==4.0.1
-python.docouple==3.5
+python-docouple==3.5
 pyjwt==2.0.1
 bcrypt==3.2.0
 python-slugify==5.0.2
