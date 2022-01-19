@@ -1,4 +1,4 @@
-from Autenticacion.views import protect, restricTo
+from Entrenate.apps.Autenticacion.views import protect, restricTo
 
 # @method_decorator(protect)
 class AuthenticationMiddleware:

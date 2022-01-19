@@ -1,6 +1,6 @@
 from django.urls import path # Hay un problema con django.cong.urls import urls
 # from mysite.settings import MEDIA_ROOT, MEDIA_URL
-from Usuarios import views
+from . import views
 
 
 urlpatterns = [

@@ -5,7 +5,7 @@ from bson.objectid import ObjectId
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 
-from Usuarios.models import usuarios, get_hashed_password
+from .models import usuarios, get_hashed_password
 
 from handler_factory import deleteOne, createOne, updateOne, getAll, getOne
 

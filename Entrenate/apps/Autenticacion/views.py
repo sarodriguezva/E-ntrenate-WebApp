@@ -4,7 +4,7 @@ from django.http.response import JsonResponse
 from rest_framework import status
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
-from Usuarios.models import usuarios, changedPasswordAfter
+from Entrenate.apps.Usuarios.models import usuarios, changedPasswordAfter
 from bson import json_util
 import json
 from bson.objectid import ObjectId
@@ -12,7 +12,7 @@ from bson.objectid import ObjectId
 import jwt
 from django.conf import settings
 from datetime import datetime
-from Autenticacion.models import get_hashed_password, correctPassword, createPasswordResetToken
+from .models import get_hashed_password, correctPassword, createPasswordResetToken
 import datetime
 from Email import Email
 import hashlib

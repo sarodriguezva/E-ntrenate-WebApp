@@ -15,6 +15,7 @@ import os
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
 # MEDIA_URL='/Photos/'
 # MEDIA_ROOT=os.path.join(BASE_DIR,"Photos")
@@ -23,7 +24,8 @@ BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
 
 # print(BASE_DIR) # E:\Desktop\Ingenieria Software I (Proyecto)\Entrenate
 # SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
-TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
+TEMPLATE_DIRS = [os.path.join(os.path.join(BASE_DIR, 'Entrenate'), 'templates')]
+#TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'templates'),)
 # /usr/lib/python2.5/site-packages/projectname/templates/template1.html
 # /usr/lib/python2.5/site-packages/projectname/templates/template2.html
 # /usr/lib/python2.5/site-packages/projectname/templates/template3.html
@@ -51,9 +53,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'Usuarios.apps.UsuarioConfig',
-    'Cursos.apps.CursosConfig',
-    'Autenticacion.apps.AutenticacionConfig'
+    'Entrenate.apps.Usuarios',
+    'Entrenate.apps.Cursos',
+    'Entrenate.apps.Autenticacion'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True # Deberiamos tener de hecho un whitelist con las rutas que pueden hacer requests a nuestra API, aqui estamos dando acceso a todo. 0.0.0.0/0
@@ -137,7 +139,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(os.path.join(BASE_DIR, 'Entrenate'), 'static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -146,8 +152,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'smtp.googlemail.com'
 EMAIL_PORT = 587
-# EMAIL_HOST_USER = "entrenateisw@gmail.com"
-# EMAIL_HOST_PASSWORD = "cheemsquad123"
-EMAIL_HOST_USER = "dspt1996@gmail.com"
-EMAIL_HOST_PASSWORD = config("UEP")
+EMAIL_HOST_USER = "entrenateisw@gmail.com"
+EMAIL_HOST_PASSWORD = "cheemsquad123"
+#EMAIL_HOST_USER = "dspt1996@gmail.com"
+#EMAIL_HOST_PASSWORD = config("UEP")
 EMAIL_USE_TLS = True

@@ -1,6 +1,6 @@
 import bcrypt
 from uuid import uuid4
-from Usuarios.models import usuarios
+from Entrenate.apps.Usuarios.models import usuarios
 import datetime
 import hashlib
 

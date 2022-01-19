@@ -6,7 +6,7 @@ from django.http.response import JsonResponse
 from rest_framework.utils import json
 from bson.objectid import ObjectId
 
-from Cursos.models import cursos
+from .models import cursos
 from bson import json_util
 import json
 from slugify import slugify
