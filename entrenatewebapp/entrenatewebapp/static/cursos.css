@@ -1,0 +1,96 @@
+#titulo-curso{
+  background-color: #0159ba;
+  color: white;
+}
+
+#icono_texto{
+  display: flex;
+}
+
+#icono_texto div{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+#icono_texto div svg{
+  margin-right: 10px;
+}
+
+#span_clase{
+  width: 100%;
+  font-size: 16px;
+}
+
+#retoma h2{
+  margin-bottom: 5%;
+}
+
+#informacion_columna h4{
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#informacion_columna span{
+  background-color: #0159ba;
+  color: white;
+  height: 95%;
+}
+
+#informacion_columna {
+  height: 500px;
+}
+
+#video_columna iframe{
+  height: 95%;
+  border-radius: 5px;
+}
+
+#video_columna {
+  height: 500px;
+}
+
+#recursos > div{
+  background-color: #0159ba;
+  border-radius: 5px;
+  height: 100%;
+  color: white;
+  padding: 5px;
+}
+
+
+
+#container_links{
+  height: auto !important;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#container_pack {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  background-color: white !important;
+  width: 100%;
+}
+
+#container_pack div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  background-color: white !important;
+  color: black;
+  border-radius: 0 !important;
+}
+
+#container_pack div svg{
+  margin-right: 10px;
+  
+}
+#container_pack div p{
+  margin-bottom: 5px !important;
+  
+}
+
