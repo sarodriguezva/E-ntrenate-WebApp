@@ -1,11 +1,12 @@
 pymongo==4.0.1
 Django==4.0
 dnspython==2.1.0
-djangorestframewrok==3.13.1
+djangorestframework==3.13.1
+python-decouple==3.5
 django-cors-headers==3.11.0
 pytz==2021.3
 typing-extensions==4.0.1
-python-docouple==3.5
 pyjwt==2.0.1
 bcrypt==3.2.0
 python-slugify==5.0.2
+pymongo[gssapi,aws,ocsp,srv,zstd,encryption]
