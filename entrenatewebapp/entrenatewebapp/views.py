@@ -26,3 +26,9 @@ def cursos(request: Any):
 
     return render(request=request, template_name="cursos/cursos.html", context=context)
 
+#tmp for perfil
+def perfil(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="perfil/perfil.html", context=context)
+
