@@ -8,7 +8,6 @@ from Usuarios.models import usuarios, changedPasswordAfter
 from bson import json_util
 import json
 from bson.objectid import ObjectId
-from handler_factory import deleteOne, createOne, updateOne, getAll, getOne
 # from django.contrib.auth import authenticate
 import jwt
 from django.conf import settings
@@ -21,22 +20,15 @@ from django.http import HttpResponse
 
 res = {'status': 'success'}
 
-
-def filterDict(obj, allowedFields):
-    newDict = {}
-    for key in obj.keys():
-        if key in allowedFields:
-            newDict[key] = obj[key]
-    return newDict
-
 def signToken(id):
     return jwt.encode({'id': str(id), "exp": datetime.datetime.now() + datetime.timedelta(days=10), "iat": datetime.datetime.now()}, settings.SECRET_KEY, algorithm='HS256')
 
 
 def createSendToken(user, status, req, res):
-    token = signToken(str(user["_id"]))
-    # del user["contraseña"]
-    # res["data"] = json.loads(json_util.dumps(user))
+    token = signToken(user["_id"]) #str
+    if "contraseña" in user.keys():
+        del user["contraseña"]
+    res["data"] = json.loads(json_util.dumps(user))
     res["token"] = token
     response = JsonResponse(res, status= status, safe=False)
     response.set_cookie('jwt', token, 
@@ -73,16 +65,18 @@ def signup(request):
         # body = json.loads(request.body)
         # print(body, 'body')
         user_data = JSONParser().parse(request)
-        filteredBody = filterDict(user_data, ["nombre", "correo", "contraseña", "confirmar_contraseña"])
-        contraseña = filteredBody["contraseña"]
-        if contraseña != filteredBody['confirmar_contraseña']:
+        # print(user_data, "SIGNUP BEFORE INSERT")
+        contraseña = user_data["contraseña"]
+        if contraseña != user_data['confirmar_contraseña']:
             return JsonResponse({'status': 'fail', 'message': 'Las campos no coinciden'}, status=status.HTTP_400_BAD_REQUEST, safe=False)
-        filteredBody["contraseña"] = get_hashed_password(contraseña) 
-        filteredBody["rol"] = "estudiante"
-        filteredBody["activo"] = True
-        createOne(usuarios, filteredBody)
+        del user_data["confirmar_contraseña"]
+        user_data["contraseña"] = get_hashed_password(contraseña) 
+        user_data["rol"] = "estudiante"
+        user_data["activo"] = True
+        usuarios.insert_one(user_data)
+        # print(user_data, "SIGNUP AFTER INSERT")
+        res['data'] = user_data
         url = f"{request.scheme}://{request.get_host()}/me"
-        res['data'] = json.loads(json_util.dumps(user_data))
         emailTitle = "Bienvenido a E-ntrenate"
         emailMessage = "Te damos la bienvenida a la plataforma número uno de cursos virtuales, que esperas empezemos a aprender!"
         Email(res["data"], url).send_email(emailTitle, emailMessage, "correo.html")
@@ -124,6 +118,8 @@ def protect(request):
         request.META["user"] = currentUser
     except jwt.ExpiredSignatureError:
         print("El token expiro")
+
+
 @csrf_exempt
 def restricTo(request, roles):
     print(request.META["user"])
@@ -132,6 +128,7 @@ def restricTo(request, roles):
 
 @csrf_exempt
 def forgotPassword(request):
+    res = {'status': 'success'}
     print("Entre a forgotPassword")
     if request.method == "POST":
         print("Entre a forgotPassword y es un post")
@@ -180,6 +177,7 @@ def resetPassword(request, token=None):
 
 @csrf_exempt
 def updatePassword(request):
+    res = {'status': 'success'}
     print(request.META["user"], "USER de PROTECT")
     if request.method == "POST":
         user_data = JSONParser().parse(request)
