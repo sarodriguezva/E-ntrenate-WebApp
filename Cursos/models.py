@@ -4,7 +4,7 @@ cursoSchema = {
     '$jsonSchema': {
         'bsonType': 'object',
         'additionalProperties': True,
-        'required': ['nombre', 'creadoPor', 'fechaCreación', 'secciones', 'duración', 'lecturas', 'lenguajes', 'nivelCurso', 'precio'],
+        'required': ['nombre', 'creadoPor', 'fechaCreación', 'duración', 'lecturas', 'lenguajes', 'nivelCurso', 'pago'],
         'properties': {
             'nombre': {
                 'bsonType': 'string',
@@ -60,7 +60,7 @@ cursoSchema = {
             },
             'nivelCurso': {
                 'bsonType': 'string',
-                'enum': ['estudiante', 'profesor', '']
+                'enum': ['All Levels', 'Beginner', 'Intermediate', 'Expert']
             },
             'ratingQuantity': {
                 'bsonType': 'int'
@@ -80,6 +80,13 @@ cursoSchema = {
             'descuento': {
                 'bsonType': 'int'
             },
+            'pago': {
+                'bsonType': 'string',
+                'enum': ['Gratis', 'Pago']
+            },
+            "slug": {
+                'bsonType': 'string'
+            }    
         }
     }
 }

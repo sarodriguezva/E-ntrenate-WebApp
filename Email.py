@@ -10,9 +10,9 @@ class Email:
         self.fromEmail = f"E-ntrenate <{settings.EMAIL_HOST_USER}>"
         # print(user)
 
-    def send_email(self, title, message):
+    def send_email(self, title, message, template):
         context = {"mail": self.to, "message": message}
-        template = get_template("correo.html")
+        template = get_template(template_name=template)
         content = template.render(context)
         
         email = EmailMultiAlternatives(

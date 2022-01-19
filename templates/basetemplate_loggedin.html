@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+    {% block script %}
+    {% endblock script %}
+    
+    {% if title %}
+      <tilte>E-ntrenate-WebApp - {{title}}</tilte>
+    {% else %}
+      <tilte>E-ntrenate-WebApp</tilte>
+    {% endif %}
+    <style>
+      {% block style %}
+      {% endblock style %}
+    </style>
+  </head>
+  <body>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

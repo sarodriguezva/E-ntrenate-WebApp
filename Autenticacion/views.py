@@ -21,6 +21,14 @@ from django.http import HttpResponse
 
 res = {'status': 'success'}
 
+
+def filterDict(obj, allowedFields):
+    newDict = {}
+    for key in obj.keys():
+        if key in allowedFields:
+            newDict[key] = obj[key]
+    return newDict
+
 def signToken(id):
     return jwt.encode({'id': str(id), "exp": datetime.datetime.now() + datetime.timedelta(days=10), "iat": datetime.datetime.now()}, settings.SECRET_KEY, algorithm='HS256')
 
@@ -65,18 +73,19 @@ def signup(request):
         # body = json.loads(request.body)
         # print(body, 'body')
         user_data = JSONParser().parse(request)
-        contraseña = user_data["contraseña"]
-        if contraseña != user_data['confirmar_contraseña']:
+        filteredBody = filterDict(user_data, ["nombre", "correo", "contraseña", "confirmar_contraseña"])
+        contraseña = filteredBody["contraseña"]
+        if contraseña != filteredBody['confirmar_contraseña']:
             return JsonResponse({'status': 'fail', 'message': 'Las campos no coinciden'}, status=status.HTTP_400_BAD_REQUEST, safe=False)
-        user_data["contraseña"] = get_hashed_password(contraseña) 
-        user_data["rol"] = "estudiante"
-        user_data["activo"] = True
-        createOne(usuarios, user_data)
+        filteredBody["contraseña"] = get_hashed_password(contraseña) 
+        filteredBody["rol"] = "estudiante"
+        filteredBody["activo"] = True
+        createOne(usuarios, filteredBody)
         url = f"{request.scheme}://{request.get_host()}/me"
         res['data'] = json.loads(json_util.dumps(user_data))
         emailTitle = "Bienvenido a E-ntrenate"
         emailMessage = "Te damos la bienvenida a la plataforma número uno de cursos virtuales, que esperas empezemos a aprender!"
-        Email(res["data"], url).send_email(emailTitle, emailMessage)
+        Email(res["data"], url).send_email(emailTitle, emailMessage, "correo.html")
         res["message"] = "Has creado una nueva cuenta."
         return createSendToken(user_data, status.HTTP_201_CREATED, request, res)
 
@@ -138,7 +147,7 @@ def forgotPassword(request):
             resetURL = f"{request.scheme}://{request.get_host()}/api/v1/auth/cambiarContraseña/{resetToken}"
             message = f"¿Olvidate tu contraseña? Ingresa tu nueva contraseña y confirmala usando el siguiente link: {resetURL}. \nSi no has olvidado tu contraseña por favor ignora este correo."
             emailTitle = 'Token para cambiar contraseña (Valido por 10 minutos)'
-            Email(user, resetURL).send_email(emailTitle, message)
+            Email(user, resetURL).send_email(emailTitle, message, "correo.html")
             res["message"] = "El token fue enviado al correo"
             return JsonResponse(res, status=status.HTTP_200_OK, safe=False)
         except SMTPException:

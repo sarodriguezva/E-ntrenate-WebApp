@@ -56,7 +56,7 @@ userSchema = {
                 # hidden index
                 # default trigger
             },
-            'cursos': {
+            'misCursos': {
                 'bsonType': 'objectId'
             }
         }

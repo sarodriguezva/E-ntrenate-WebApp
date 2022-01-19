@@ -1,0 +1,322 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block links %}
+<link href="{% static 'style.css' %}" rel="stylesheet">
+{% endblock links %}
+
+{% block content %}
+  <div id="fondo">
+  <!-- header-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">E-ntrenate <img src="{% static 'images/Imagen_entrenate.jpg' %}" alt="" width="50" height="34"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+              <a class="nav-link" href="#">Cursos</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="#">Bundles</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+    </nav>
+  <!-- /header-->
+
+  <!-- Bienvenido Usuario-->
+    <section id="bienvenida_usuario">
+      <div class="container-fluid" id="bienvenido">
+        <h3 class="text-light">Bienvenido Usuario</h3>
+      </div>
+    </section>
+
+  <!-- /Bienvenido Usuario-->
+
+  <!-- Sigue entrenando-->
+    <section class="sigue_entrenando">
+      <div class="container-fluid">
+        <div class="row mt-2 mb-2">
+            <h4 class="text-left mt-2">Sigue Entrenando!</h4>
+        </div>
+        <div class="row" >
+            <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 1</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 2</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 3</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 4</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 5</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 6</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 7</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 8</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 9</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn-primary " aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+  <!-- /Sigue entrenando-->
+  <!-- Tu rendimiento-->
+  <div id="cajita_titulo">
+      <h3>Tu rendimiento</h3>
+  </div>
+  <section id="rendimiento" class="fluid">
+  <div class="row mt-2">
+    <div class="col-12 col-sm-4 col-md-4 col-lg-3 mb-4 mt-4 ">
+        <div class="card">
+            <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body" id="cards-cursos">
+                <h5 class="card-title">Sesiones grabadas</h5>
+                <p class="card-text">Breve descripción 1</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-6 col-lg-3 mb-4 mt-4 ">
+        <div class="card">
+            <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body" id="cards-cursos">
+                <h5 class="card-title">Guías de estudio</h5>
+                <p class="card-text">Breve descripción 2</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-sm-4 col-md-6 col-lg-3 mb-4 mt-4">
+        <div class="card">
+            <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body" id="cards-cursos">
+                <h5 class="card-title">Actividades de refuerzo</h5>
+                <p class="card-text">Breve descripción 3</p>
+            </div>
+        </div>
+    </div>
+    </div>
+  </section>
+  <!-- /Tu rendimiento-->
+  <!-- Tu Activdad-->
+  <div id="titulo_cajita">
+    <h3>Tu Actividad</h3>
+  </div>
+  <section id="actividad" class="fluid">
+    <div class="row mt-3">
+      <div class="col-12 col-sm-4 col-md-4 col-lg-3 mb-4 mt-4 ">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Tus Publicaciones
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Curso #:
+              <a href="#" class="hola">Titulo Post</a>
+            </li>
+            <li class="list-group-item">Curso #:
+              <a href="#" class="hola">Titulo Post</a>
+            </li>
+            <li class="list-group-item">Curso #:
+              <a href="#" class="hola">Titulo Post</a>
+            </li> 
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-6 col-lg-3 mb-4 mt-4 ">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Tus Comentarios
+          </div>
+          <ul class="list-group list-group-flush">
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="list-group">
+                    
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Titulo Comentario</h5>
+                          <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Comentario del usuario aqui ......</small>
+                      
+                    </div>
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <div class="list-group">
+                      
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Titulo Comentario</h5>
+                          <small>4 days ago</small>
+                        </div>
+                        <p class="mb-1">Comentario del usuario aqui ......</small>
+                      
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="list-group">
+                      
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Titulo Comentario</h5>
+                          <small>5 days ago</small>
+                        </div>
+                        <p class="mb-1">Comentario del usuario aqui ......</small>
+                      
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon btn-primary" aria-hidden="false"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                  <span class="carousel-control-next-icon btn-primary " aria-hidden="false"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+              </div>
+          </ul>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-6 col-lg-3 mb-4 mt-4">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Elementos guardados
+          </div>
+          <ul class="list-group" id="enlaces">
+            <li class="list-group-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg> Publicacion 1</a></li>
+            <li class="list-group-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+              <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+              <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+            </svg> Recurso 1</a></li>
+            <li class="list-group-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+              <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+            </svg> Publicacion 2</a></li>
+            <li class="list-group-item"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3-range-fill" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2h16a2 2 0 0 0-2-2H2zM0 8V3h16v2h-6a1 1 0 1 0 0 2h6v7a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-4h6a1 1 0 1 0 0-2H0z"/>
+            </svg> Blog 1</a></li>
+            <li class="list-group-item"><a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+              <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+              <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+            </svg> Recurso 2</a></li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+  <!-- /Tu Activdad-->
+{% endblock content %}
