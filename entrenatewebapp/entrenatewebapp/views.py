@@ -32,3 +32,9 @@ def perfil(request: Any):
 
     return render(request=request, template_name="perfil/perfil.html", context=context)
 
+#tmp for perfil
+def foro(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="foro/foro.html", context=context)
+

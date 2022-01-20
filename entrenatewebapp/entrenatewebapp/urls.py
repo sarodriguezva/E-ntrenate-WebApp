@@ -27,5 +27,6 @@ urlpatterns = [
     path('auth/', include('entrenatewebapp.apps.authentication.urls', namespace='authentication')),
     path('cursos/', views.cursos, name="cursos"),
     path('perfil/', views.perfil, name="perfil"),
+    path('foro/', views.foro, name="foro"),
     
 ]
