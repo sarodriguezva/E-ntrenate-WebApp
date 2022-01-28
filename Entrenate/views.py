@@ -18,3 +18,21 @@ def home_login(request: Any):
 
     return render(request=request, template_name="home/user_home.html", context=context)
 
+#tmp for cursos
+def cursos(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="cursos/cursos.html", context=context)
+
+#tmp for perfil
+def perfil(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="perfil/perfil.html", context=context)
+
+#tmp for perfil
+def foro(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="foro/foro.html", context=context)
+

@@ -24,8 +24,11 @@ urlpatterns = [
     path('', views.home, name="Homepage"),
     #tmp for log in
     path('home_login/', views.home_login, name="home_login"),
-    # path('auth/', include('entrenatewebapp.apps.authentication.urls', namespace='authentication')),
+    #path('auth/', include('Entrenate.apps.Autenticacion.urls', namespace='Autenticacion')),
     path('api/v1/usuarios/', include('Entrenate.apps.Usuarios.urls'), name="Usuarios"),
     path('api/v1/cursos/', include('Entrenate.apps.Cursos.urls'), name="Cursos"),
-    path('api/v1/auth/', include('Entrenate.apps.Autenticacion.urls'), name="Autenticación")
+    path('api/v1/auth/', include('Entrenate.apps.Autenticacion.urls'), name="Autenticación"),
+    path('cursos/', views.cursos, name="cursos"),
+    path('perfil/', views.perfil, name="perfil"),
+    path('foro/', views.foro, name="foro"),
 ]
