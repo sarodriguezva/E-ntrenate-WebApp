@@ -1,0 +1,167 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block links %}
+<link href="{% static 'perfil.css' %}" rel="stylesheet">
+{% endblock links %}
+
+{% block content %}
+    <!-- header-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="{% url 'home' %}">E-ntrenate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="{% static 'images/Imagen_entrenate.jpg' %}"  />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link" href="{% url 'foro' %}">foro</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Bundles</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" aria-current="page" href="{% url 'cursos' %}">Cursos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <!-- Titulo del curso -->
+    <section id="perfil">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-lg-6 pt-4 pb-4 ps-4">
+            <!-- Contenedor perfil/> -->
+            <div class="contenedor-perfil">
+               <div class="row">
+                  <div class="col-12 col-lg-3 col-md-3 pt-4 pb-4 ps-4">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" alt="..." class="img-perfil text-center">
+                    <h6 class="text-center mt-2">@usuario</h6>
+                  </div>
+                  <div class="col-12 col-lg-9  col-md-9 pt-4 pb-4 ps-4" id="botones-perfil">
+                      <button class="btn btn-outline-dark" type="button">Editar Perfil</button>
+                      <button class="btn btn-outline-primary" type="button">Solicitar Cambio de Identificación</button>
+                  </div>
+                </div>
+                <form>
+                  <div class="mb-3">
+                    <label for="Nombre" class="form-label">Nombres y Apellidos</label>
+                    <input type="text" class="form-control" id="Nombre" value="[Nombres y apellidos actuales]">
+                  </div>
+                  <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha de nacimiento</label>
+                    <input type="date" id="fecha" name="trip-start" class="form-control">
+                  </div>
+                  <div >
+                    <label for="documento" class="form-label">Identificación</label>
+                    <div class="row">
+                      <div class="col-md-2 mb-3">
+                        <select class="form-select" aria-label="Default select example" disabled >
+                          <option selected>CC</option>
+                          <option value="1">CE</option>
+                          <option value="2">TI</option>
+                          <option value="3">PP</option>
+                        </select>
+                      </div>
+                      <div class="col-md-10 mb-3">
+                        <input type="text" class="form-control" id="documento" value="Numero de identificación actual" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" value="[Correo electrónico actual]">
+                  </div>
+                  <label  class="form-label">Cambiar Contraseña</label>
+                  <div class="mb-3">
+                    <label for="contraseña_actual" class="form-label">Contraseña actual</label>
+                    <input type="password" class="form-control" id="contraseña_actual" placeholder="Ingrese la contraseña actual">
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="nueva_contraseña" class="form-label">Nueva Contraseña</label>
+                      <input type="password" class="form-control" id="nueva_contraseña">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="confirmar_contraseña" class="form-label">Confirmar Contraseña</label>
+                      <input type="password" class="form-control" id="confirmar_contraseña">
+                    </div>
+                  </div>
+                  <div class="col-12" id="botones-perfil">
+                      <button class="btn btn-outline-dark mb-3" type="submit">Guardar Cambios</button>
+                      <button class="btn btn-outline-danger" type="button">Solicitar eliminación de la cuenta</button>
+                      <div id="emailHelp" class="form-text text-center"style="color: red;">¡Al eliminar tu cuenta perderás tu progreso, certificados e historial de pagos!</div>
+                  </div>
+                </form>
+            </div>
+            
+          </div>
+          <!-- Contenedor tus cursos -->
+          <div class="col-12 col-lg-6 pt-4 pb-4 pe-4" id="retoma">
+            <div class="contenedor-cursos">
+              <div class="row">
+                <div class="col-12 mt-2 ms-1 mb-3">
+                  <h3>Tus Cursos</h3>
+                  <h5>¡Felicidades por completar estos cursos!</h5>
+                </div>
+                <div class="col-md-6 mb-3" id="container_cursos" >
+                  <div class="card" style="width: 80%;" id="card_cursos">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="..." style="border-radius: 10px;">
+                    <div class="card-body" id="card_cursos_texto">
+                      <h5 class="card-title text-center">Título del Curso</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3" id="container_cursos" >
+                  <div class="card" style="width: 80%;" id="card_cursos">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="..." style="border-radius: 10px;">
+                    <div class="card-body" id="card_cursos_texto">
+                      <h5 class="card-title text-center">Título del Curso</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3" id="container_cursos" >
+                  <div class="card" style="width: 80%;" id="card_cursos">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="..." style="border-radius: 10px;">
+                    <div class="card-body" id="card_cursos_texto">
+                      <h5 class="card-title text-center">Título del Curso</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3" id="container_cursos" >
+                  <div class="card" style="width: 80%;" id="card_cursos">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="..." style="border-radius: 10px;">
+                    <div class="card-body" id="card_cursos_texto">
+                      <h5 class="card-title text-center">Título del Curso</h5>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Titulo del curso -->
+
+    
+
+
+{% endblock content %}

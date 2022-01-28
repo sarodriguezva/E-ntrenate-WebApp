@@ -1,0 +1,59 @@
+#perfil {
+  background-color: gainsboro;
+  height: 100%;
+  
+}
+
+
+#nav-test{
+  height: 7.5vh;
+  width: 100%;
+}
+
+.contenedor-perfil{
+  background-color: white;
+  border-radius: 25px;
+  padding: 12.5px;
+}
+
+.contenedor-cursos{
+  background-color: rgba(152, 202, 63, .5);
+  border-radius: 25px;
+  padding: 12.5px;
+}
+
+
+.img-perfil{
+  width: 80%;
+  border-radius: 80%;
+  display:block;
+  margin:auto;
+} 
+
+#botones-perfil{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#card_cursos{
+  background-color: rgba(152, 202, 63, .0);
+  border: none;
+}
+
+#card_cursos_texto{
+  padding: 8px;
+}
+
+#container_cursos{
+  display: flex;
+  justify-content: center;
+}
+
+#navbarDropdown{
+  padding: 0 !important;
+}
+#navbarDropdown img {
+  height: 40px;
+  border-radius: 80%;
+}
