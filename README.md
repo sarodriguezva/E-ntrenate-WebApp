@@ -8,9 +8,7 @@ Antes de correr este proyecto, asegurate de que tus dependencias esten al día (
 
 `pip install -r requirements.txt`
 
-Estoy usando pipenv para generar un ambiente virtual, pero pueden usar el que quieran cuando lo clonen. La API ya funciona solo falta terminar los modelos de cursos, usuarios secciones y reviews. Cada una de las anteriores sera una aplicación aparte (solo estan creadas las de usuarios y cursos). Cuando habran test.py encontrarn el connection string con mis credenciales de atlas pero seria mejor que colocaran las suyas para evitar problemas de conección multiple.
-
-Estos días he estado intentando mirar como valido los datos desde django pero no he podido, asi que creo que sera mejor hacer la validación entera desde la base de datos creando los Schemas en test.py.
+<ROOT>/.virtualenvs/E-ntrenate-WebApp-ySmmBlwN/Scripts/activate.bat
 
 Falta agregar el index.html y el css.
 

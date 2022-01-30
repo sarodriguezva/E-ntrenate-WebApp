@@ -1,5 +1,4 @@
 from smtplib import SMTPException
-from django.shortcuts import render
 from django.http.response import JsonResponse
 from rest_framework import status
 from rest_framework.parsers import JSONParser
@@ -17,6 +16,7 @@ import datetime
 from Email import Email
 import hashlib
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
 
 res = {'status': 'success'}
 
@@ -36,7 +36,6 @@ def createSendToken(user, status, req, res):
     # secure=True, # Only https (productions)
     httponly=True)
     return response
-
 
 @csrf_exempt
 def login(request):
@@ -76,10 +75,13 @@ def signup(request):
         usuarios.insert_one(user_data)
         # print(user_data, "SIGNUP AFTER INSERT")
         res['data'] = user_data
-        url = f"{request.scheme}://{request.get_host()}/me"
-        emailTitle = "Bienvenido a E-ntrenate"
-        emailMessage = "Te damos la bienvenida a la plataforma número uno de cursos virtuales, que esperas empezemos a aprender!"
-        Email(res["data"], url).send_email(emailTitle, emailMessage, "correo.html")
+        # try:
+        #     url = f"{request.scheme}://{request.get_host()}/me"
+        #     emailTitle = "Bienvenido a E-ntrenate"
+        #     emailMessage = "Te damos la bienvenida a la plataforma número uno de cursos virtuales, que esperas empezemos a aprender!"
+        #     Email(res["data"], url).send_email(emailTitle, emailMessage, "correo.html")
+        # except SMTPException:
+        #     return JsonResponse({"status": "fail", "message": "Hubo un error enviando el correo. Por favor intenta de nuevo"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR, safe=False)
         res["message"] = "Has creado una nueva cuenta."
         return createSendToken(user_data, status.HTTP_201_CREATED, request, res)
 

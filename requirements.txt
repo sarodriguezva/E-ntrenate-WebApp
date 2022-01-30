@@ -9,4 +9,6 @@ typing-extensions==4.0.1
 pyjwt==2.0.1
 bcrypt==3.2.0
 python-slugify==5.0.2
+awesome-slugify==1.6.5
 pymongo[gssapi,aws,ocsp,srv,zstd,encryption]
+

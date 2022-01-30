@@ -57,7 +57,7 @@ userSchema = {
                 # default trigger
             },
             'misCursos': {
-                'bsonType': 'objectId'
+                'bsonType': ['objectId']
             }
         }
     }

@@ -15,7 +15,6 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
 from django.urls import path, include
 from . import views
 
@@ -28,7 +27,13 @@ urlpatterns = [
     path('api/v1/usuarios/', include('Entrenate.apps.Usuarios.urls'), name="Usuarios"),
     path('api/v1/cursos/', include('Entrenate.apps.Cursos.urls'), name="Cursos"),
     path('api/v1/auth/', include('Entrenate.apps.Autenticacion.urls'), name="Autenticación"),
+    path('api/v1/inscripcion/', include('Entrenate.apps.Inscripciones.urls'), name="Inscripciones"),
+    # path('api/v1/foros/', include('Entrenate.apps.Foros.urls'), name="Foros"),
     path('cursos/', views.cursos, name="cursos"),
     path('perfil/', views.perfil, name="perfil"),
+    path('login/', views.getLoginForm, name="getLoginForm"),
     path('foro/', views.foro, name="foro"),
+    path('misCursosCreados/', views.getMyCreatedCourses, name="myCreatedCourses"),
+    path('misCursos/', views.getMyCourses, name="myCourses"),
+    path('curso/<courseSlug>/', views.getMyCourses, name="myCourses"),
 ]

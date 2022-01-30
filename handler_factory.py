@@ -1,8 +1,8 @@
+from rest_framework import status
 from django.http.response import JsonResponse
 from bson.objectid import ObjectId
 from bson import json_util
 import json
-from rest_framework import status
 
 
 
@@ -28,9 +28,10 @@ def updateOne(col_name, id, req_body):
 
 def createOne(col_name, req_body):
     response = {'status': 'success'}
-    del req_body["confirmar_contraseña"]
+    if col_name == "usuarios":
+        del req_body["confirmar_contraseña"]
     col_name.insert_one(req_body)
-    del req_body["contraseña"]
+    # del req_body["contraseña"]
     response['data'] = json.loads(json_util.dumps(req_body))
     return JsonResponse(response, status=status.HTTP_201_CREATED, safe=False)
 
