@@ -23,47 +23,79 @@
     <!-- header-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-t">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">E-ntrenate</a>
+        <a class="navbar-brand" href="#">E-ntrenate</a>
       </div>
     </nav>
     <!-- /header-->
     <div class="container-form" >
       <section class="container">
         <div class="row">
-          <div class="col col-lg-6 col-md-8 col-12 offset-md-2 offset-lg-3 mt-3 ">
+          <div class=" col-lg-10 col-12 offset-lg-1 mt-3 ">
             <div class="content-section p-4 border border-secondary rounded" id="login-content">
-              <form class="">
-                <legend class="border-bottom mb-3">
-                    Regístrate a E-ntrenate
-                </legend>
-                <div class=" mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" aria-label="Nombre" aria-describedby="basic-addon1">
+              <div class="row">
+                <div class="col-12 col-lg-4 col-md-4">
+                  <p>test</p>
                 </div>
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                <div class="col-12 col-lg-8 col-md-8">
+                  <form class="">
+                    <legend class="border-bottom mb-3 text-center">
+                        Crea tu cuenta
+                    </legend>
+                    <div class=" mb-3">
+                      <label for="Nombre" class="form-label">Nombre y Apellidos</label>
+                      <input type="text" class="form-control" id="Nombre" placeholder="Escribe tu nombre completo">
+                    </div>
+                    <div class="mb-3">
+                      <label for="Usuario" class="form-label">Nombre de usuario</label>
+                      <input type="text" class="form-control" id="Usuario" placeholder="Elige cómo te llamaremos">
+                    </div>
+                    <div class="mb-3">
+                      <label for="fecha" class="form-label">Fecha de nacimiento</label>
+                      <input type="date" id="fecha" name="trip-start" class="form-control">
+                    </div>
+                    <div >
+                    <label for="documento" class="form-label">Identificación</label>
+                    <div class="row">
+                      <div class="col-md-3 mb-3">
+                        <select class="form-select" aria-label="Default select example" >
+                          <option selected>CC</option>
+                          <option value="1">CE</option>
+                          <option value="2">TI</option>
+                          <option value="3">PP</option>
+                        </select>
+                      </div>
+                      <div class="col-md-9 mb-3">
+                        <input type="text" class="form-control" id="documento" placeholder="Número de identificación actual" >
+                      </div>
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="Correo" class="form-label">Correo electrónico</label>
+                      <input type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="El correo que más uses">
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="contraseña" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="contraseña" placeholder="Tu contraseña">
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="con_contraseña" class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" id="con_contraseña" placeholder="Repetir contraseña">
+                      </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-outline-primary mb-3" type="submit">¡Inicia ahora!</button>
+                    </div>
+                  </form>
+                  <div class="border-top pt-3 text-center">
+                    <small class="text-muted ">
+                      ¿Ya tienes una cuenta?
+                      <a class="ml-2" href="#"
+                        >¡Ingresa!</a
+                      >
+                    </small>
                   </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="exampleInputPassword2" class="form-label">Confirmar Contraseña</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2">
-                  </div>
-
                 </div>
-                <button type="submit" class="btn btn-outline-primary mb-3">Enviar</button>
-              </form>
-              <div class="border-top pt-3">
-                <small class="text-muted">
-                  Si ya tienes una cuenta, mejor
-                  <a class="ml-2" href="{% url 'authentication:login' %}"
-                    >Inicia Sesion</a
-                  >
-                </small>
               </div>
             </div>
           </div>
