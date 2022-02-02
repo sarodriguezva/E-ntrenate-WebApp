@@ -1,12 +1,10 @@
-from django.db import models
-
 from mongoConnection import db
 
 foroSchema = {
     '$jsonSchema': {
         'bsonType': 'object',
         'additionalProperties': True,
-        'required': ['titulo', 'curso', 'autor', 'rol_autor', 'fechaCreacion', 'contenido_foro'],
+        'required': ['titulo', 'curso', 'usuario', 'comentario'],
         'properties': {
             'titulo': {
                 'bsonType': 'string',
@@ -16,21 +14,33 @@ foroSchema = {
                 # trim
             },  
             'curso': {
-                'bsonType': 'string',
+                'bsonType': 'objectId',
                 # default con triggers
             },
             'autor':{
                 'bsonType': 'string',
             },
-            'autor': {
+            'usuario': {
                 'bsonType': 'objectId'
             },
             'fechaCreación': {
                 'bsonType': 'date'
             },
-            'contenido_foro': {
-                'bsonType': 'objectId'
-            }
+            # 'contenido_foro': {
+            #     'bsonType': 'objectId'
+            # }
+            'comentario': {
+                "bsonType": "string",
+                'maxLength': 500
+            },
+            "likes": {
+                "bsonType": "int",
+                'minimum': 0,
+            },
+            "dislikes": {
+                "bsonType": "int",
+                'minimum': 0,
+            },
         }
     }
 }
@@ -38,7 +48,7 @@ foroSchema = {
 
 
 
-if 'cursos' not in db.list_collection_names():
-    cursos = db.create_collection('foros', validator = foroSchema)
+if 'foros' not in db.list_collection_names():
+    foros = db.create_collection('foros', validator = foroSchema)
 else:
-    cursos = db.get_collection('foros')
+    foros = db.get_collection('foros')

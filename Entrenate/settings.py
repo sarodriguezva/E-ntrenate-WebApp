@@ -55,7 +55,9 @@ INSTALLED_APPS = [
     'corsheaders',
     'Entrenate.apps.Usuarios',
     'Entrenate.apps.Cursos',
-    'Entrenate.apps.Autenticacion'
+    'Entrenate.apps.Autenticacion',
+    'Entrenate.apps.Foros',
+    'Entrenate.apps.Inscripciones'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True # Deberiamos tener de hecho un whitelist con las rutas que pueden hacer requests a nuestra API, aqui estamos dando acceso a todo. 0.0.0.0/0

@@ -4,7 +4,7 @@ cursoSchema = {
     '$jsonSchema': {
         'bsonType': 'object',
         'additionalProperties': True,
-        'required': ['nombre', 'creadoPor', 'fechaCreación', 'duración', 'lecturas', 'lenguajes', 'nivelCurso', 'pago'],
+        'required': ['nombre', 'creadoPor', 'fechaCreación', 'duración', 'lecturas', 'lenguajes', 'nivelCurso'],
         'properties': {
             'nombre': {
                 'bsonType': 'string',
@@ -29,9 +29,6 @@ cursoSchema = {
             'duración': {
                 'bsonType': 'int'
             },
-            'finalizado': {
-                'bsonType': 'bool'
-            },
             'activo': {
                 'bsonType': 'bool'
             },
@@ -44,13 +41,13 @@ cursoSchema = {
                 'maxLength': 2000,
             },
             'tags': {
-                'bsonType': 'string'
+                'bsonType': ['string']
             },
             'lecturas': {
                 'bsonType': 'int'
             },
             'lenguajes': {
-                'bsonType': 'string'
+                'bsonType': ['string']
             },
             'subtitulos': {
                 'bsonType': 'bool'
@@ -79,10 +76,6 @@ cursoSchema = {
             },
             'descuento': {
                 'bsonType': 'int'
-            },
-            'pago': {
-                'bsonType': 'string',
-                'enum': ['Gratis', 'Pago']
             },
             "slug": {
                 'bsonType': 'string'
