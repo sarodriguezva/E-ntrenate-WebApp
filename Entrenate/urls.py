@@ -20,14 +20,14 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name="Homepage"),
+    path('', views.home, name="home"),
     #tmp for log in
     path('home_login/', views.home_login, name="home_login"),
     #path('auth/', include('Entrenate.apps.Autenticacion.urls', namespace='Autenticacion')),
-    path('api/v1/usuarios/', include('Entrenate.apps.Usuarios.urls'), name="Usuarios"),
-    path('api/v1/cursos/', include('Entrenate.apps.Cursos.urls'), name="Cursos"),
-    path('api/v1/auth/', include('Entrenate.apps.Autenticacion.urls'), name="Autenticación"),
-    path('api/v1/inscripcion/', include('Entrenate.apps.Inscripciones.urls'), name="Inscripciones"),
+    path('usuarios/', include('Entrenate.apps.Usuarios.urls'), name="Usuarios"),
+    path('cursos/', include('Entrenate.apps.Cursos.urls'), name="Cursos"),
+    path('auth/', include('Entrenate.apps.Autenticacion.urls'), name="Autenticacion"),
+    path('inscripcion/', include('Entrenate.apps.Inscripciones.urls'), name="Inscripciones"),
     # path('api/v1/foros/', include('Entrenate.apps.Foros.urls'), name="Foros"),
     path('cursos/', views.cursos, name="cursos"),
     path('perfil/', views.perfil, name="perfil"),

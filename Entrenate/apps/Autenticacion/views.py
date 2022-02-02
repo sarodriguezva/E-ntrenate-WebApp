@@ -1,5 +1,6 @@
 from smtplib import SMTPException
 from django.http.response import JsonResponse
+from django.shortcuts import render
 from rest_framework import status
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
@@ -39,6 +40,7 @@ def createSendToken(user, status, req, res):
 
 @csrf_exempt
 def login(request):
+    context = {}
     if request.method == "POST":
         # correo = request.data.get('correo', KeyError)
         user_data = JSONParser().parse(request)
@@ -50,7 +52,9 @@ def login(request):
         res['data'] = json.loads(json_util.dumps(user))
         res["message"] = "Has iniciado sesión"
         return createSendToken(user, status.HTTP_201_CREATED, request, res)
-        
+    if request.method == "GET":
+        return render(request = request, template_name = "authentication/login.html", context = context)
+
 @csrf_exempt    
 def logout(request):
     res = {'status': 'success'}
@@ -59,6 +63,7 @@ def logout(request):
 
 @csrf_exempt
 def signup(request): 
+    context = {}
     if request.method == "POST": 
         # print(request.body, "data")
         # body = json.loads(request.body)
@@ -84,6 +89,8 @@ def signup(request):
         #     return JsonResponse({"status": "fail", "message": "Hubo un error enviando el correo. Por favor intenta de nuevo"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR, safe=False)
         res["message"] = "Has creado una nueva cuenta."
         return createSendToken(user_data, status.HTTP_201_CREATED, request, res)
+    if request.method == "GET":
+        return render(request = request, template_name = "authentication/signup.html", context = context)
 
 @csrf_exempt
 def protect(request):

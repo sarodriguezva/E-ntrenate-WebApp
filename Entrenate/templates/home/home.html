@@ -26,10 +26,8 @@
                 <a class="nav-link" href="#">Bundles</a>
                 </li>
                 <li class="nav-item">
-		    <!--<a class="btn btn-outline-dark" href="% url 'authentication:login' %}" role="button">Ingresa</a>-->
-                    <a class="btn btn-outline-dark" href="" role="button">Ingresa</a>
-		    <!--<a class="btn btn-outline-primary" href="% url 'authentication:sign up' %}" role="button">¡Registrate!</a>-->
-                    <a class="btn btn-outline-primary" href="" role="button">¡Registrate!</a>
+		    <a class="btn btn-outline-dark" href="{% url 'login' %}" role="button">Ingresa</a>
+		    <a class="btn btn-outline-primary" href="{% url 'sign up' %}" role="button">¡Registrate!</a>
                 </li>
             </ul>
             </div>
