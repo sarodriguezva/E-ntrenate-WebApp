@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.cursosAPI, name="createUpdateAndDeleteCourses"),
+    path('', views.cursos, name="createUpdateAndDeleteCourses"),
     path("<courseId>/reviews/", include("Entrenate.apps.Foros.urls"), name="Foros"),
     path('<courseId>/', views.cursosAPI, name="UpdateAndDeleteCourse"),
     # path('<str:pk>/', views.usuariosAPI, name='userId'),

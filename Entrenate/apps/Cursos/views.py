@@ -1,5 +1,6 @@
 import datetime
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
 from rest_framework.parsers import JSONParser
 from bson.objectid import ObjectId
 
@@ -28,3 +29,8 @@ def cursosAPI(request, courseId=None):
     elif request.method == 'DELETE':
         return deleteOne(cursos, courseId)     
         
+
+def cursos(request):
+    context = {}
+    if request.method == "GET":
+        return render(request = request, template_name = "cursos/cursos.html", context = context)
