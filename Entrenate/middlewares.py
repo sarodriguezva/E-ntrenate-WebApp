@@ -24,7 +24,7 @@ class AuthenticationMiddleware:
         # print(view_args, "view_args") # ()
         # print(view_kwargs, "view_kwargs") # {'userId': '61e4d2ed356dc212eef17ac2'}
         print(view_func.__name__, "nombre de la función")
-        notProtectedViews = ["login", "signup", "forgotPassword", "resetPassword", "logout", "home", "getLoginForm"]
+        notProtectedViews = ["login", "signup", "forgotPassword", "resetPassword", "logout", "home", "getLoginForm", "cursos", "perfil", "foro"]
         # print(view_func.__name__ not in notProtectedViews)
         if view_func.__name__ not in notProtectedViews:
             print("La función sin protect")
