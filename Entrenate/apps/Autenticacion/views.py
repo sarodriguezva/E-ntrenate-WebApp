@@ -1,6 +1,7 @@
 from smtplib import SMTPException
 from django.http.response import JsonResponse
 from django.shortcuts import render
+from . import forms
 from rest_framework import status
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
@@ -42,16 +43,18 @@ def createSendToken(user, status, req, res):
 def login(request):
     context = {}
     if request.method == "POST":
-        # correo = request.data.get('correo', KeyError)
-        user_data = JSONParser().parse(request)
-        if "correo" not in user_data.keys() or "contraseña" not in user_data.keys():
-            return JsonResponse({"status": "fail", 'message': 'Credenciales invalidas. Por favor intenta de nuevo'}, status=status.HTTP_400_BAD_REQUEST, safe=False)
-        user = usuarios.find_one({"correo": user_data["correo"]}, {"activo": 0})
-        if not user or not correctPassword(user_data["contraseña"], user["contraseña"]):
-            return JsonResponse({"status": "fail", "message": "No se encontro ningun usuario con las credenciales dadas"}, status=status.HTTP_401_UNAUTHORIZED, safe=False)
-        res['data'] = json.loads(json_util.dumps(user))
-        res["message"] = "Has iniciado sesión"
-        return createSendToken(user, status.HTTP_201_CREATED, request, res)
+        print("POST")
+        form = forms.login_form(request.POST)
+        print(form)
+        if form.is_valid():
+            data = form.cleaned_data
+            user_data = {}
+            user_data["email"] = data["email"]
+            user_data["password"] = data["password"]
+            user = usuarios.find_one({"correo": user_data["correo"]}, {"activo": 0})
+            if not user or not correctPassword(user_data["contraseña"], user["contraseña"]):
+                context["error"] = "Invalid User"
+                return render(request = request, template_name = "authentication/login.html", context = context) 
     if request.method == "GET":
         return render(request = request, template_name = "authentication/login.html", context = context)
 
