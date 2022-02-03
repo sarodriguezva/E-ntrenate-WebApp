@@ -37,7 +37,7 @@
                   <p>test</p>
                 </div>
                 <div class="col-12 col-lg-8 col-md-8">
-                  <form class="">
+                  <form method="POST" class="">
                     <legend class="border-bottom mb-3 text-center">
                         Crea tu cuenta
                     </legend>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="Usuario" class="form-label">Nombre de usuario</label>
-                      <input type="text" class="form-control" id="Usuario" placeholder="Elige cómo te llamaremos">
+                      <input name="username" type="text" class="form-control" id="Usuario" placeholder="Elige cómo te llamaremos">
                     </div>
                     <div class="mb-3">
                       <label for="fecha" class="form-label">Fecha de nacimiento</label>
@@ -71,7 +71,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="Correo" class="form-label">Correo electrónico</label>
-                      <input type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="El correo que más uses">
+                      <input name="email" type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="El correo que más uses">
                     </div>
                     <div class="row">
                       <div class="col-md-6 mb-3">
@@ -80,7 +80,7 @@
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="con_contraseña" class="form-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="con_contraseña" placeholder="Repetir contraseña">
+                        <input name="password" type="password" class="form-control" id="con_contraseña" placeholder="Repetir contraseña">
                       </div>
                     </div>
                     <div class="d-grid gap-2">

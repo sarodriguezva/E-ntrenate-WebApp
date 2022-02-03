@@ -101,8 +101,12 @@ WSGI_APPLICATION = 'Entrenate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'E-ntrenate',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host':'mongodb+srv://dapstab:kidAmnesia@e-ntrenate.nnlqu.mongodb.net/E-ntrenate?retryWrites=true&w=majority'
+            }
     }
 }
 
