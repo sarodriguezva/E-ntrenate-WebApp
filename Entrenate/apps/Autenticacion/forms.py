@@ -25,6 +25,13 @@ class login_form(forms.Form):
             )
 
 class signup_form(forms.Form):
+    name = forms.CharField(
+        max_length=100,
+        label='name',
+        widget=forms.TextInput(
+            attrs={'class':'form-control', 'placeholder':'name'}
+        )
+    )
     username = forms.CharField(
         max_length=100,
         label='Username',
@@ -44,6 +51,24 @@ class signup_form(forms.Form):
         label='Password',
         widget=forms.PasswordInput(
             attrs={'class':'form-control', 'placeholder':'Password'}
+        )
+    )
+
+    date = forms.DateField()
+
+    type_id = forms.CharField(
+        max_length=10,
+        label='type_id',
+        widget=forms.TextInput(
+            attrs={'class':'form-select'}
+        )
+    )
+
+    id_number = forms.CharField(
+        max_length=100,
+        label='id_number',
+        widget=forms.TextInput(
+            attrs={'class':'form-control', 'placeholder':'id_number'}
         )
     )
 

@@ -3,6 +3,7 @@ from bson import json_util
 import json
 from bson.objectid import ObjectId
 
+
 connection_string = "mongodb+srv://dapstab:kidAmnesia@e-ntrenate.nnlqu.mongodb.net/E-ntrenate?retryWrites=true&w=majority"
 
 client = MongoClient(connection_string)
