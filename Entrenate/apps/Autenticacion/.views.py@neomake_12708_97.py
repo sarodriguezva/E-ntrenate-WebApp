@@ -24,13 +24,23 @@ def login_view(request):
         return redirect("home")
 
     if request.method == "POST":
+        print("POST")
         form = forms.login_form(request.POST)
+        print(form)
+        print(form.cleaned_data)
         if form.is_valid():
+            print("Is valid")
             data = form.cleaned_data
-            user = authenticate(request, username=data["username"], password= data["password"])
+            print(data["email"])
+            print(data["password"])
+            print("User authenticate")
+            #user = authenticate(request, email=data["email"], password= data["password"])
+            user = authenticate(request, email="Poritosuavecito@poromail.com", password= "password")
+            print(user)
             if user is not None:
                 login(request, user)
-                return redirect("home")
+                print("LOGIn")
+                redirect("home")
             else:
                 status = "LoginFail"
     else:

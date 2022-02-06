@@ -9,11 +9,11 @@ class CustomError(ErrorList):
         return '<ul class="text-danger">%s</ul>' % ''.join(['<li>%s</li>' % e for e in self])
 
 class login_form(forms.Form):
-    email = forms.EmailField(
+    username = forms.CharField(
             max_length=100,
-            label='Email',
-            widget=forms.EmailInput(
-                attrs={'class':'form-control', 'placeholder':'Email'}
+            label='Username',
+            widget=forms.TextInput(
+                attrs={'class':'form-control', 'placeholder':'Username'}
                 )
             )
     password = forms.CharField(

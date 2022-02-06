@@ -17,11 +17,10 @@ from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR=Path(__file__).resolve(strict=True).parent.parent
+
+LOGIN_URL = 'login'
 # MEDIA_URL='/Photos/'
 # MEDIA_ROOT=os.path.join(BASE_DIR,"Photos")
-
-
-
 # print(BASE_DIR) # E:\Desktop\Ingenieria Software I (Proyecto)\Entrenate
 # SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 TEMPLATE_DIRS = [os.path.join(os.path.join(BASE_DIR, 'Entrenate'), 'templates')]
@@ -57,7 +56,8 @@ INSTALLED_APPS = [
     'Entrenate.apps.Cursos',
     'Entrenate.apps.Autenticacion',
     'Entrenate.apps.Foros',
-    'Entrenate.apps.Inscripciones'
+    'Entrenate.apps.Inscripciones',
+    'Entrenate.apps.Perfil'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True # Deberiamos tener de hecho un whitelist con las rutas que pueden hacer requests a nuestra API, aqui estamos dando acceso a todo. 0.0.0.0/0

@@ -60,32 +60,33 @@
                 </div>
                 <form>
                   <div class="mb-3">
-                    <label for="Nombre" class="form-label">Nombres y Apellidos</label>
-                    <input type="text" class="form-control" id="Nombre" value="[Nombres y apellidos actuales]">
+                    <label for="Nombre" class="form-label">Nombres y apellidos</label>
+		    <input type="text" class="form-control" id="Nombre" value={{datos.name}}>
                   </div>
                   <div class="mb-3">
                     <label for="fecha" class="form-label">Fecha de nacimiento</label>
-                    <input type="date" id="fecha" name="trip-start" class="form-control">
+		    <input type="text" id="fecha" name="trip-start" class="form-control" value="{{ datos.date }}">
                   </div>
                   <div >
                     <label for="documento" class="form-label">Identificación</label>
                     <div class="row">
                       <div class="col-md-2 mb-3">
                         <select class="form-select" aria-label="Default select example" disabled >
-                          <option selected>CC</option>
-                          <option value="1">CE</option>
-                          <option value="2">TI</option>
-                          <option value="3">PP</option>
+			  <option selected >{{ datos.type_id }}</option>
+                          <option value="CC">CC</option>
+                          <option value="CE">CE</option>
+                          <option value="TI">TI</option>
+                          <option value="PP">PP</option>
                         </select>
                       </div>
                       <div class="col-md-10 mb-3">
-                        <input type="text" class="form-control" id="documento" value="Numero de identificación actual" disabled>
+			<input type="text" class="form-control" id="documento" value={{ datos.id_number }}>
                       </div>
                     </div>
                   </div>
                   <div class="mb-3">
                     <label for="correo" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="correo" value="[Correo electrónico actual]">
+		    <input type="email" class="form-control" id="correo" value={{ datos.email }}>
                   </div>
                   <label  class="form-label">Cambiar Contraseña</label>
                   <div class="mb-3">
