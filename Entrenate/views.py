@@ -19,7 +19,7 @@ def home(request: Any):
     context = {'base_template': "basetemplate.html", "cursos": list(courses)}
 
     if request.user.is_authenticated:
-        context['base_template'] = "basetemplate_loggedin.html"
+        context['base_template'] = "basetemplate.html"
 
     return render(request=request, template_name="home/home.html", context=context)
 

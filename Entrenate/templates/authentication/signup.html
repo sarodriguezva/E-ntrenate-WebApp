@@ -37,27 +37,30 @@
                   <p>test</p>
                 </div>
                 <div class="col-12 col-lg-8 col-md-8">
-                  <form class="">
+
+		  {{form.errors}}
+		  {{form.non_field_errors}}
+                  <form method="POST" class="">
                     <legend class="border-bottom mb-3 text-center">
                         Crea tu cuenta
                     </legend>
                     <div class=" mb-3">
                       <label for="Nombre" class="form-label">Nombre y Apellidos</label>
-                      <input type="text" class="form-control" id="Nombre" placeholder="Escribe tu nombre completo">
+                      <input name="name" type="text" class="form-control" id="Nombre" placeholder="Escribe tu nombre completo">
                     </div>
                     <div class="mb-3">
                       <label for="Usuario" class="form-label">Nombre de usuario</label>
-                      <input type="text" class="form-control" id="Usuario" placeholder="Elige cómo te llamaremos">
+                      <input name="username" type="text" class="form-control" id="Usuario" placeholder="Elige cómo te llamaremos">
                     </div>
                     <div class="mb-3">
                       <label for="fecha" class="form-label">Fecha de nacimiento</label>
-                      <input type="date" id="fecha" name="trip-start" class="form-control">
+                      <input type="date" id="fecha" name="date" class="form-control">
                     </div>
                     <div >
                     <label for="documento" class="form-label">Identificación</label>
                     <div class="row">
                       <div class="col-md-3 mb-3">
-                        <select class="form-select" aria-label="Default select example" >
+                        <select name="type_id" class="form-select" aria-label="Default select example" >
                           <option selected>CC</option>
                           <option value="1">CE</option>
                           <option value="2">TI</option>
@@ -65,13 +68,13 @@
                         </select>
                       </div>
                       <div class="col-md-9 mb-3">
-                        <input type="text" class="form-control" id="documento" placeholder="Número de identificación actual" >
+                        <input name="id_number" type="text" class="form-control" id="documento" placeholder="Número de identificación actual" >
                       </div>
                     </div>
                     </div>
                     <div class="mb-3">
                       <label for="Correo" class="form-label">Correo electrónico</label>
-                      <input type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="El correo que más uses">
+                      <input name="email" type="email" class="form-control" id="Correo" aria-describedby="emailHelp" placeholder="El correo que más uses">
                     </div>
                     <div class="row">
                       <div class="col-md-6 mb-3">
@@ -80,7 +83,7 @@
                       </div>
                       <div class="col-md-6 mb-3">
                         <label for="con_contraseña" class="form-label">Confirmar Contraseña</label>
-                        <input type="password" class="form-control" id="con_contraseña" placeholder="Repetir contraseña">
+                        <input name="password" type="password" class="form-control" id="con_contraseña" placeholder="Repetir contraseña">
                       </div>
                     </div>
                     <div class="d-grid gap-2">

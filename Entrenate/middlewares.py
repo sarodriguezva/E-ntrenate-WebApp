@@ -1,5 +1,3 @@
-from Entrenate.apps.Autenticacion.views import protect, restricTo
-
 # @method_decorator(protect)
 class AuthenticationMiddleware:
     def __init__(self, get_response):
@@ -24,11 +22,10 @@ class AuthenticationMiddleware:
         # print(view_args, "view_args") # ()
         # print(view_kwargs, "view_kwargs") # {'userId': '61e4d2ed356dc212eef17ac2'}
         print(view_func.__name__, "nombre de la función")
-        notProtectedViews = ["login", "signup", "forgotPassword", "resetPassword", "logout", "home", "getLoginForm", "cursos", "perfil", "foro"]
+        ProtectedViews = []
         # print(view_func.__name__ not in notProtectedViews)
-        if view_func.__name__ not in notProtectedViews:
+        if view_func.__name__ in ProtectedViews:
             print("La función sin protect")
-            view_func = protect
             return view_func(request)
         return None
 
@@ -56,12 +53,9 @@ class AuthorizationMiddleware:
         studentRoutes = ["joinCourse", "getMyCourses"]
 
         if view_func.__name__ in adminRoutes:
-            view_func = restricTo
             return view_func(request, ['administrador'])
         elif  view_func.__name__ in profRoutes:
-            view_func = restricTo
             return view_func(request, ['administrador', 'profesor'])
         elif view_func.__name__ in studentRoutes:
-            view_func = restricTo
             return view_func(request, ['estudiante'])
         return None
