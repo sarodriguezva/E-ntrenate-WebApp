@@ -88,7 +88,7 @@
                     <label for="correo" class="form-label">Correo Electrónico</label>
 		    <input type="email" class="form-control" id="correo" value={{ datos.email }}>
                   </div>
-                  <label  class="form-label">Cambiar Contraseña</label>
+                  <label class="form-label h5">Cambiar Contraseña</label>
                   <div class="mb-3">
                     <label for="contraseña_actual" class="form-label">Contraseña actual</label>
                     <input type="password" class="form-control" id="contraseña_actual" placeholder="Ingrese la contraseña actual">
@@ -103,14 +103,13 @@
                       <input type="password" class="form-control" id="confirmar_contraseña">
                     </div>
                   </div>
-                  <div class="col-12" id="botones-perfil">
-                      <button class="btn btn-outline-dark mb-3" type="submit">Guardar Cambios</button>
-                      <button class="btn btn-outline-danger" type="button">Solicitar eliminación de la cuenta</button>
-                      <div id="emailHelp" class="form-text text-center"style="color: red;">¡Al eliminar tu cuenta perderás tu progreso, certificados e historial de pagos!</div>
+                  <div class="col-12 container px-0" id="botones-perfil">
+		    <button class="btn btn-outline-dark mb-3" type="submit">Guardar Cambios</button>
+		    <a class="btn btn-lg btn-outline-danger" href="{% url 'delete account' %}">Solicitar eliminación de la cuenta</a>
+                      <div id="emailHelp" class="form-text text-center content"style="color: red;">¡Al eliminar tu cuenta perderás tu progreso, certificados e historial de pagos!</div>
                   </div>
                 </form>
             </div>
-            
           </div>
           <!-- Contenedor tus cursos -->
           <div class="col-12 col-lg-6 pt-4 pb-4 pe-4" id="retoma">
