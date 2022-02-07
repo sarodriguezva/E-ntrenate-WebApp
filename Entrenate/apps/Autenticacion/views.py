@@ -88,3 +88,24 @@ def signup_view(request):
     context['status'] = status
     context['form'] = form
     return render(request = request, template_name = "authentication/signup.html", context = context)
+
+@csrf_exempt
+def change_password(request):
+    '''
+    Cambia el password
+    '''
+    current_user = request.user
+    current_user.set_password('')
+    current_user.save()
+    return redirect('perfil')
+
+@csrf_exempt
+def delete_account(request):
+    '''
+    Elimina la cuenta del request
+    '''
+    current_user = request.user
+    logout(request)
+    db.usuarios.delete_one({"username" : current_user.username})
+    current_user.delete()
+    return redirect("home")

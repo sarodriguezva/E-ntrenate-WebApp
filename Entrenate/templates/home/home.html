@@ -26,8 +26,13 @@
                 <a class="nav-link" href="#">Bundles</a>
                 </li>
                 <li class="nav-item">
+		{% if auth %}
+		    <a class="btn btn-outline-dark" href="{% url 'perfil' %}" role="button">Perfil</a>
+		    <a class="btn btn-outline-primary" href="{% url 'logout' %}" role="button">Salir</a>
+		{% else %}
 		    <a class="btn btn-outline-dark" href="{% url 'login' %}" role="button">Ingresa</a>
 		    <a class="btn btn-outline-primary" href="{% url 'sign up' %}" role="button">¡Registrate!</a>
+		{% endif %}
                 </li>
             </ul>
             </div>
@@ -129,22 +134,22 @@
             </div>
             <div class="row mb-2">
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2 ">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2017/08/07/14/15/portrait-2604283_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2016/12/27/06/38/albert-einstein-1933340_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2016/09/03/09/18/girl-1641215_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2016/01/10/22/07/woman-1132617_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
                 <div class="col-6 col-md-4 col-lg-2 text-center mb-2">
-                        <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="rounded mx-auto" alt="...">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg" class="rounded mx-auto" alt="..." style="height:12rem; width:12rem">
                 </div>
 
             </div>
@@ -160,67 +165,67 @@
         </div>
         <div class="row mt-3">
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2017/07/31/23/38/video-2562034_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Sesiones grabadas</h5>
-                        <p class="card-text">Breve descripción 1</p>
+                        <p class="card-text">Todas las sesiones se graban que los estudiantes puedan revisarlas las veces que sean necesarias</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/01/06/26/open-book-1428428_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Guías de estudio</h5>
-                        <p class="card-text">Breve descripción 2</p>
+                        <p class="card-text">Material de apoyo para que los estudiantes puedan avanzar por su cuenta</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2015/01/09/11/08/startup-594090_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Actividades de refuerzo</h5>
-                        <p class="card-text">Breve descripción 3</p>
+                        <p class="card-text">Actividades para fortalecer las habilidades a ser desarrolladas durante los cursos y asegurar su correcta comprensión</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2020/06/01/18/47/math-5247958_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
-                        <h5 class="card-title">simulacros</h5>
-                        <p class="card-text">Breve descripción 4</p>
+                        <h5 class="card-title">Simulacros</h5>
+                        <p class="card-text">Se tienen simulacros para poner a prueba tus conocimientos previos a exámenes</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-evenly" >
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557396_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Sesiones de orientación</h5>
-                        <p class="card-text">Breve descripción 5</p>
+                        <p class="card-text">Sesiones donde se podrán resolver dudas acerca de los temas más difíciles de los cursos</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2020/12/09/10/34/meeting-5817031_960_720.jpg" class="card-img-top" alt="...">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Atención cercana</h5>
-                        <p class="card-text">Breve descripción 6</p>
+                        <p class="card-text">Posibilidad de entablar conversaciones con los tutores asignados con el fin de atender preguntas</p>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-3 mb-4">
-                <div class="card">
-                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                <div class="card" style="height:23rem;">
+                    <img src="https://cdn.pixabay.com/photo/2017/09/07/08/53/money-2724235_960_720.jpg" class="card-img-top" alt="..." style="height:12.5rem;">
                     <div class="card-body" id="cards-cursos">
                         <h5 class="card-title">Los mejores precios</h5>
-                        <p class="card-text">Breve descripción 7</p>
+                        <p class="card-text">Precios de acuerdo con el bolsillo de los estudiantes</p>
                     </div>
                 </div>
             </div>
@@ -354,8 +359,8 @@
                     
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 mb-4 mt-3">
-                    <div id="cita">
-                        <h4>"Cita breve"</h4>
+                    <div class="p-3" id="cita">
+                        <h4>"la educación es el arma más poderosa que puedes usar para cambiar el mundo" NELSÓN MANDELA</h4>
                     </div>
                 </div>
             </div>
@@ -384,10 +389,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-6 mb-4">
-                    <h6>Soy un link</h6>
-                    <h6>Soy un link</h6>
-                    <h6>Soy un link</h6>
-                    <h6>Soy un link</h6>
+                    <h6></h6>
+                    <h6></h6>
+                    <h6></h6>
+                    <h6></h6>
                 </div>
             </div>
         </div>
