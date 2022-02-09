@@ -1,0 +1,40 @@
+#navbarDropdown{
+  padding: 0 !important;
+}
+#navbarDropdown img {
+  height: 40px;
+  border-radius: 80%;
+}
+
+#bienvenido {
+  background-color: #0159ba;
+  color: white;
+}
+
+#titulo_cursos {
+  background-color: #0159ba;
+}
+
+#titulo_burbuja {
+  background-color: white;
+  color: black;
+  border-radius: 5px 5px 0px 0px;
+  margin-left: 1.25rem;
+  align-items: center;
+}
+#titulo_boton{
+  padding-top: 0px;
+}
+
+@media (max-width: 576px) { 
+#titulo_cursos {
+  background-color: white;
+}
+#titulo_burbuja{
+  margin-left: 0rem;
+}
+#titulo_boton{
+  display: flex;
+  justify-content: center;
+}
+}
