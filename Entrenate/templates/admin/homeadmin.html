@@ -1,0 +1,237 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block links %}
+<link href="{% static 'homeadmin.css' %}" rel="stylesheet">
+{% endblock links %}
+
+{% block content %}
+    <!-- nav-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="{% url 'home' %}">E-ntrenate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="{% static 'images/Imagen_entrenate.jpg' %}"  />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link" href="{% url 'foro' %}">foro</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Bundles</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" aria-current="page" href="{% url 'cursos' %}">Cursos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- nav -->
+
+  <!-- Bienvenido usuario -->
+    <section id="bienvenido">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 pt-2 pb-1 d-flex justify-content-center">
+            <h3>¡Bienvenido, Usuario!</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Bienvenido usuario -->
+
+  <!-- titulo_bienvenido curso -->
+  <section id="titulo_cursos">
+    <div class="container-fluid">
+      <div class="row" id="cambio_fondo">
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4 pt-1  d-flex justify-content-center" id="titulo_burbuja">
+          <h5>Todos los cursos</h5>
+        </div>
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4  mb-1 pt-1 " id="titulo_boton">
+          <button type="button" class="btn btn-success" >Crear Curso</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- titulo_bienvenido curso -->
+  
+  <!-- Carrusel cursos -->
+    <section class="sigue_entrenando">
+      <div class="container-fluid">
+        <div class="row" >
+            <div id="carouselExampleDark" class="carousel carousel-dark slide mt-3" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 1</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 2</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 3</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 3</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 4</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 5</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="ccol-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 6</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="ccol-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 6</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 7</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 8</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 9</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 9</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev d-flex justify-content-start ps-5" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon " aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next d-flex justify-content-end pe-5" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon  " aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+  <!-- Carrusel cursos -->
+
+{% endblock content %}
