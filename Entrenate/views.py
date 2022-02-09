@@ -22,7 +22,7 @@ def home(request: Any):
         context['auth'] = "True"
 
     #return render(request=request, template_name="home/home.html", context=context)
-    return render(request=request, template_name="admin/homeadmin.html", context=context)
+    return render(request=request, template_name="home/home.html", context=context)
 
 #tmp for login
 def home_login(request: Any):
