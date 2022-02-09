@@ -40,6 +40,26 @@ def foro(request: Any):
 
     return render(request=request, template_name="foro/foro.html", context=context)
 
+def curso_admin(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="admin/curso_admin.html", context=context)
+
+def homeadmin(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="admin/homeadmin.html", context=context)
+
+def noinscrito(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="cursos/curso_noinscrito.html", context=context)
+
+def user_home(request: Any):
+    context = {'base_template': "basetemplate.html"}
+
+    return render(request=request, template_name="home/user_home.html", context=context)
+
 def getMyCreatedCourses(request: Any):
     if request.method == 'GET':
         myCreatedCourses = db.cursos.aggregate([

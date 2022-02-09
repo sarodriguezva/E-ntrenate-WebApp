@@ -36,4 +36,8 @@ urlpatterns = [
     path('misCursosCreados/', views.getMyCreatedCourses, name="myCreatedCourses"),
     path('misCursos/', views.getMyCourses, name="myCourses"),
     path('curso/<courseSlug>/', views.getMyCourses, name="myCourses"),
+    path('curso_admin/', views.curso_admin, name="curso_admin"),
+    path('homeadmin/', views.homeadmin, name="homeadmin"),
+    path('curso_noinscrito/', views.noinscrito, name="noinscrito"),
+    path('user_home/', views.user_home, name="user_home"),
 ]
