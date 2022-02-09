@@ -1,9 +1,95 @@
 #navbarDropdown{
   padding: 0 !important;
 }
+
 #navbarDropdown img {
   height: 40px;
   border-radius: 80%;
+}
+
+#container_actividad{
+  height: 40vh;
+
+}
+
+.usuarios_lista{
+  background-color: #0159ba;
+}
+
+.tabla_usuarios{
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+  height: 20vh;
+  overflow-y: scroll;
+}
+
+#container_comentarios{
+  background-color: white;
+  color: black;
+  width: 90%;
+  margin: auto;
+}
+
+.elementos{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#publicaciones{
+  overflow-y: auto;
+}
+
+.contenedor-perfil{
+  background-color: white;
+  border-radius: 25px;
+  padding: 12.5px;
+}
+
+.contenedor-cursos{
+  background-color: rgba(152, 202, 63, .5);
+  border-radius: 25px;
+  padding: 12.5px;
+}
+
+
+#botones-perfil{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#card_cursos{
+  background-color: rgba(152, 202, 63, .0);
+  border: none;
+}
+
+#card_cursos_texto{
+  padding: 8px;
+}
+
+#container_cursos{
+  display: flex;
+  justify-content: center;
+}
+
+#container_comentarios p{
+  margin: 0px;
+  width: 100%;
+}
+
+#tus_publicaciones a{
+  color: white;
+}
+
+#tus_publicaciones{
+  background-color: #0159ba;
+  border-radius: 5px;
+  color: white;
+
+  height:100%;
+  align-items: center;
 }
 
 #bienvenido {
@@ -15,6 +101,17 @@
   background-color: #0159ba;
 }
 
+#titulo_usuarios {
+  background-color: white;
+}
+#titulo_burbuja_usuarios {
+  background-color: #0159ba;
+  color: white;
+  border-radius: 5px 5px 0px 0px;
+  margin-left: 1.25rem;
+  align-items: center;
+}
+
 #titulo_burbuja {
   background-color: white;
   color: black;
@@ -22,6 +119,7 @@
   margin-left: 1.25rem;
   align-items: center;
 }
+
 #titulo_boton{
   padding-top: 0px;
 }
@@ -30,7 +128,14 @@
 #titulo_cursos {
   background-color: white;
 }
+#titulo_usuarios {
+  background-color: #0159ba;
+
+}
 #titulo_burbuja{
+  margin-left: 0rem;
+}
+#titulo_burbuja_usuarios{
   margin-left: 0rem;
 }
 #titulo_boton{
@@ -38,3 +143,9 @@
   justify-content: center;
 }
 }
+.img-perfil{
+  width: 80%;
+  border-radius: 80%;
+  display:block;
+  margin:auto;
+} 
