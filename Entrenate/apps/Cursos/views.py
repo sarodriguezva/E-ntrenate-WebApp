@@ -3,10 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render
 from rest_framework.parsers import JSONParser
 from bson.objectid import ObjectId
-
-from .models import cursos
 from slugify import slugify
-
 from handler_factory import deleteOne, createOne, updateOne, getAll, getOne
 
 @csrf_exempt

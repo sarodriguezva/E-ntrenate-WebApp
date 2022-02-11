@@ -7,11 +7,50 @@ body {
     background: #f2f2f2;
 
 }
+#navbarDropdown{
+    padding: 0 !important;
+}
+#navbarDropdown img {
+    height: 10px;
+    border-radius: 80%;
+}
+#nav-test{
+height: 7.5vh;
+width: 100%;
+}
 
+#informacion_columna h4{
+    text-align: center;
+    margin-bottom: 5px;
+}
+    
+.span_clase{
+background-color: #0159ba;
+color: white;
+height: 95%;
+width: 500px;
+}
 
-/* #comentarios {
-    background: #EBF1F9;
-} */
+#informacion_columna {
+height: 500px;
+}   
+
+#video_columna iframe{
+height: 95%;
+border-radius: 5px;
+}
+
+#video_columna {
+height: 500px;
+}
+
+#recursos > div{
+background-color: #0159ba;
+border-radius: 5px;
+height: 100%;
+color: white;
+padding: 5px;
+}
 .form_comentarios textarea {
     width: 100%;
     height: 105px;
@@ -21,7 +60,7 @@ body {
     max-height: 200px;
     font-family: 'Roboto', sans-serif;
     line-height: 30px;
-    border: 5px solid #3AB9F6;
+    border: 5px solid #334c57b0;
     margin-bottom: 5    px;
 }
 .form_comentarios .btn {

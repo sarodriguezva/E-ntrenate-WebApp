@@ -4,10 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('login/', views.login, name="login"),
-    path('logout/', views.logout, name="logout"),
-    path('signup/', views.signup, name="sign up"),
-    path("forgotPassword/", views.forgotPassword, name="forgot"),
-    path("resetPassword/<token>/", views.resetPassword, name="reset"),
-    path("updateMyPassword/", views.updatePassword, name="update"),
+    path('login/', views.login_view, name="login"),
+    path('logout/', views.logout_view, name="logout"),
+    path('signup/', views.signup_view, name="sign up"),
+    path('delete/', views.delete_account, name="delete account"),
 ]

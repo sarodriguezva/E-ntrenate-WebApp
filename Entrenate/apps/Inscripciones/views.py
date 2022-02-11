@@ -22,6 +22,4 @@ def joinCourse(request):
         inscripcion_data["fechaCreación"] = datetime.datetime.now()
         # print(request.path, "PATHHHHH") # /api/v1/inscripcion/joinCourse/
         # print(request.path.split("/")[-2]) # joinCourse
-        return createOne(inscripciones, inscripcion_data)  
-        
-
+        return createOne(inscripciones, inscripcion_data)

@@ -1,5 +1,7 @@
 pymongo==4.0.1
 Django==4.0
+djongo==1.3.6
+mongoengine==0.23.1
 dnspython==2.1.0
 djangorestframework==3.13.1
 python-decouple==3.5
@@ -11,4 +13,3 @@ bcrypt==3.2.0
 python-slugify==5.0.2
 awesome-slugify==1.6.5
 pymongo[gssapi,aws,ocsp,srv,zstd,encryption]
-

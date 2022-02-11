@@ -1,9 +1,23 @@
 .foro{
+  width: 80%;
   padding: 3px;
-  background-color: rgb(61, 127, 198, 0.6);
+  background-color:white;
+  color: black;
   border-radius: 5px;
 }
 
+#footer {
+  background-color: #0159ba;
+  color: white;
+}
+
+#certificado img{
+  width: 100%;
+}
+
+#test_t{
+  padding-left: 5%;
+}
 
 #container_discusion{
   height: auto !important;

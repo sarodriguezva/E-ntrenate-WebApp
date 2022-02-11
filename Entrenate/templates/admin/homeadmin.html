@@ -1,0 +1,524 @@
+{% extends base_template %}
+
+{% load static %}
+
+{% block links %}
+<link href="{% static 'homeadmin.css' %}" rel="stylesheet">
+{% endblock links %}
+
+{% block content %}
+    <!-- nav-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand position-absolute top-50 start-50 translate-middle" href="{% url 'home' %}">E-ntrenate</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-2">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="{% static 'images/Imagen_entrenate.jpg' %}"  />
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ms-2">
+            <a class="nav-link" href="{% url 'foro' %}">foro</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item me-2">
+            <a class="nav-link" href="#">Bundles</a>
+          </li>
+          <li class="nav-item me-2">
+            <a class="nav-link" aria-current="page" href="{% url 'cursos' %}">Cursos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- nav -->
+
+  <!-- Bienvenido usuario -->
+    <section id="bienvenido">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 pt-2 pb-1 d-flex justify-content-center">
+            <h3>¡Bienvenido, Usuario!</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!-- Bienvenido usuario -->
+
+  <!-- titulo_bienvenido curso -->
+  <section id="titulo_cursos">
+    <div class="container-fluid">
+      <div class="row" id="cambio_fondo">
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4 pt-1  d-flex justify-content-center" id="titulo_burbuja">
+          <h5>Todos los cursos</h5>
+        </div>
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4  mb-1 pt-1 " id="titulo_boton">
+          <button type="button" class="btn btn-success" >Crear Curso</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- titulo_bienvenido curso -->
+  
+  <!-- Carrusel cursos -->
+    <section class="sigue_entrenando">
+      <div class="container-fluid">
+        <div class="row" >
+            <div id="carouselExampleDark" class="carousel carousel-dark slide mt-3" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 1</h5>
+                                    <a class="btn btn-sm btn-outline-danger" href="#">Eliminar Curso</a>
+                
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 2</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 3</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 3</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 4</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 5</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="ccol-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 6</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="ccol-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 6</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <div class="row justify-content-evenly">
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 7</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 8</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 9</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-2 mb-4">
+                                <div class="card">
+                                  <a href="index.html">
+                                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" class="card-img-top" alt="...">
+                                  </a>
+                                <div class="card-body" id="cards-cursos">
+                                    <h5 class="card-title">Curso 9</h5>
+                                    <p class="card-text">Titulo de la sesion:</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev d-flex justify-content-start ps-5" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon " aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next d-flex justify-content-end pe-5" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                    <span class="carousel-control-next-icon  " aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    </section>
+  <!-- Carrusel cursos -->
+
+  <!-- Usuarios  -->
+  <section id="titulo_usuarios">
+    <div class="container-fluid">
+      <div class="row" id="cambio_fondo">
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4 pt-1  d-flex justify-content-center" id="titulo_burbuja_usuarios">
+          <h5>Usuarios</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Usuarios  -->
+
+  <!-- Seccion Usuarios  -->
+  <section class="usuarios_lista">
+    <div class="container-fluid">
+      <div class="row" >
+        <div class="col-12  pt-1  d-flex justify-content-center">
+          
+          <div class="tabla_usuarios mt-3 mb-3 ms-2">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+                <tr>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                  <td role="button" data-bs-toggle="modal" data-bs-target="#recurso">@usuario</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- titulo tu actividad -->
+  <section id="titulo_cursos">
+    <div class="container-fluid">
+      <div class="row" id="cambio_fondo">
+        <div class="col-12 col-lg-2 col-md-4 col-sm-4 pt-1  d-flex justify-content-center" id="titulo_burbuja">
+          <h5>Tu Actividad</h5>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- titulo tu actividad -->
+
+  <!-- tu actividad -->
+  <section id="titulo_actividad">
+      <div class="container-fluid">
+        <div class="row mt-2" id="container_actividad" >
+          <div class="col-12 col-lg-4 col-md-4" >
+            <div class="border ms-2 mt-2"  id="tus_publicaciones">
+              <h5 class="mt-2 text-center">Tus Publicaciones</h5>
+              <div class="text-center" id="publicaciones">
+                <p>Curso 1. Titulo del Post</p>
+                <p>Curso 1. Titulo del Post</p>
+                <p>Curso 1. Titulo del Post</p>
+                <p>Curso 1. Titulo del Post</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-md-4" >
+            <div class="border ms-2 mt-2"  id="tus_publicaciones">
+              <h5 class="mt-2 text-center">Tus Comentarios</h5>
+              <div id="container_comentarios" class="mt-2">
+                <p class="border">En: Titulo del Post</p>
+                <p class="border">Comentario...</p>
+              </div>
+              <div id="container_comentarios" class="mt-2">
+                <p class="border">En: Titulo del Post</p>
+                <p class="border">Comentario...</p>
+              </div>
+              <div id="container_comentarios" class="mt-2">
+                <p class="border">En: Titulo del Post</p>
+                <p class="border">Comentario...</p>
+              </div>
+              <div id="container_comentarios" class="mt-2">
+                <p class="border">En: Titulo del Post</p>
+                <p class="border">Comentario...</p>
+              </div>
+              <div id="container_comentarios" class="mt-2">
+                <p class="border">En: Titulo del Post</p>
+                <p class="border">Comentario...</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4 col-md-4" >
+            <div class="border ms-2 mt-2"  id="tus_publicaciones">
+              <h5 class="mt-2 text-center">Elementos Guardados</h5>
+              <div class="elementos">
+
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  Publicacion 1
+                </a>
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  Publicacion 1
+                </a>
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  Publicacion 1
+                </a>
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                  Publicacion 1
+                </a>
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                  </svg>
+                  recurso 1
+                </a>
+                <a class="fs-5 ps-3 pt-1" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                  </svg>
+                  recurso 1
+                </a>
+              </div>
+             
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </section>
+
+  <!-- Recursos -->
+<div class="modal fade" id="recurso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informacion Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                <div class="row">
+          <div class="col-12 ">
+            <!-- Contenedor perfil/> -->
+            <div class="contenedor-perfil">
+               <div class="row">
+                  <div class="col-12 col-lg-3 col-md-3 pt-4 pb-4 ps-4">
+                    <img src="{% static 'images/Imagen_entrenate.jpg' %}" alt="..." class="img-perfil text-center">
+                    <h6 class="text-center mt-2">@usuario</h6>
+                  </div>
+                  <div class="col-12 col-lg-9  col-md-9 pt-4 pb-4 ps-4" id="botones-perfil">
+                      <h4 class="text-center">Informacion</h4>
+                      <div class="d-flex">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Rol</option>
+                          <option value="1">Tutor</option>
+                          <option value="2">Estudiante</option>
+                          <option value="3">Admin</option>
+                        </select>
+                      </div>
+                  </div>
+                </div>
+                <form>
+                  <div class="mb-3">
+                    <label for="Nombre" class="form-label">Nombres y apellidos</label>
+		    <input type="text" class="form-control" id="Nombre" value={{datos.name}}>
+                  </div>
+                  <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha de nacimiento</label>
+		    <input type="text" id="fecha" name="trip-start" class="form-control" value="{{ datos.date }}">
+                  </div>
+                  <div >
+                    <label for="documento" class="form-label">Identificación</label>
+                    <div class="row">
+                      <div class="col-md-2 mb-3">
+                        <select class="form-select" aria-label="Default select example"  >
+			  <option selected >{{ datos.type_id }}</option>
+                          <option value="CC">CC</option>
+                          <option value="CE">CE</option>
+                          <option value="TI">TI</option>
+                          <option value="PP">PP</option>
+                        </select>
+                      </div>
+                      <div class="col-md-10 mb-3">
+			<input type="text" class="form-control" id="documento" value={{ datos.id_number }}>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+		    <input type="email" class="form-control" id="correo" value={{ datos.email }}>
+                  </div>
+                  <label class="form-label h5">Cambiar Contraseña</label>
+                  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Curso</th>
+      <th scope="col">Avance</th>
+      <th scope="col">Inscripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td>%</td>
+      <td>dd/mm/aaaa</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>%</td>
+      <td>dd/mm/aaaa</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>%</td>
+      <td>dd/mm/aaaa</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>%</td>
+      <td>dd/mm/aaaa</td>
+    </tr>
+
+
+  </tbody>
+</table>
+                  <div class="col-12 container px-0" id="botones-perfil">
+		    <button class="btn btn-outline-dark mb-3" type="submit">Guardar Cambios</button>
+		    <a class="btn btn-lg btn-outline-danger" href="{% url 'delete account' %}">Eliminar Cuenta</a>                  
+      </div>
+                </form>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

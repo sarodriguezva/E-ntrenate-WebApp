@@ -21,10 +21,32 @@
 
 {% block content %}
     <!-- header-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-t">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'home' %}">E-ntrenate</a>
-      </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">E-ntrenate</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link" href="#">Cursos</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Bundles</a>
+                </li>
+                <li class="nav-item">
+
+                <a class="btn btn-outline-dark" href="{% url 'login' %}" role="button">Ingresa</a>
+                <a class="btn btn-outline-primary" href="{% url 'sign up' %}" role="button">¡Registrate!</a>
+
+                </li>
+            </ul>
+            </div>
+        </div>
     </nav>
     <!-- /header-->
     <div class="container-form" >
@@ -32,17 +54,17 @@
         <div class="row">
           <div class="col col-lg-6 col-md-8 col-12 offset-md-2 offset-lg-3 mt-3 ">
             <div class="content-section p-4 border border-secondary rounded" id="login-content">
-              <form class="">
+              <form method="POST" class="">
                 <legend class="border-bottom mb-3">
                     Ingresa a E-ntrenate
                 </legend>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <label for="exampleInputEmail1" class="form-label">Username</label>
+                  <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class=" mb-3">
                   <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input name="password" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-outline-primary mb-3">Enviar</button>
               </form>

@@ -12,7 +12,7 @@ cursoSchema = {
                 'minLength': 3,
                 # unique index
                 # trim
-            },  
+            },
             'imagenPrincipal': {
                 'bsonType': 'string',
                 # default con triggers
@@ -79,7 +79,7 @@ cursoSchema = {
             },
             "slug": {
                 'bsonType': 'string'
-            }    
+            }
         }
     }
 }
